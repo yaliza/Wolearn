@@ -1,10 +1,12 @@
 package by.wolearn
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import by.wolearn.core.utils.hide
-import kotlinx.android.synthetic.main.toolbar.*
+import by.wolearn.core.utils.show
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,11 +16,20 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        findNavController(R.id.navHostFragment).addOnDestinationChangedListener { controller, destination, arguments ->
+        findNavController(R.id.navHostFragment).addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.loginFragmentDestination -> toolbar.hide()
+                R.id.loginFragment, R.id.registrationFragment -> {
+                    bottomMenu.hide()
+                    toolbar.hide()
+                }
+                else -> {
+                    actionBar?.title = "hello"
+                    bottomMenu.show()
+                    toolbar.show()
+                }
             }
         }
+        bottomMenu.setupWithNavController(findNavController(R.id.navHostFragment))
     }
 
 }

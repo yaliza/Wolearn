@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Wolearn</string>
+
+    <!--LOGIN AND REGISTRATION SCREENS-->
+    <string name="hint_login">Enter login</string>
+    <string name="hint_password">Enter password</string>
+    <string name="hint_name">Enter name</string>
+    <string name="hint_surname">Enter surname</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <!--MAIN MENU-->
+    <string name="action_profile">Profile</string>
+    <string name="action_learning">Learning</string>
+    <string name="action_settings">Settings</string>
 </resources>

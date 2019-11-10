@@ -3,12 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainNavGraph"
-    app:startDestination="@id/loginFragmentDestination">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/loginFragmentDestination"
+        android:id="@+id/loginFragment"
         android:name="by.wolearn.login.view.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_bottomNavigation"
+            app:destination="@id/bottomNavigation"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="by.wolearn.login.view.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_bottomNavigation"
+            app:destination="@id/bottomNavigation"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/bottomNavigation"
+        app:startDestination="@id/profileFragment">
+
+        <fragment
+            android:id="@+id/settingsFragment"
+            android:name="by.wolearn.settings.SettingsFragment"
+            android:label="SettingsFragment"
+            tools:layout="@layout/fragment_settings" />
+
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="by.wolearn.profile.view.ProfileFragment"
+            android:label="MainFragment"
+            tools:layout="@layout/fragment_profile" />
+
+        <fragment
+            android:id="@+id/learningFragment"
+            android:name="by.wolearn.learning.view.LearningFragment"
+            android:label="LearningFragment"
+            tools:layout="@layout/fragment_learning" />
+
+    </navigation>
 
 </navigation>
