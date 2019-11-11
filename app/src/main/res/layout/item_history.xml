@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/S"
+    android:layout_marginTop="@dimen/S"
+    android:layout_marginRight="@dimen/S">
+
+    <View
+        android:id="@+id/circle"
+        android:layout_width="@dimen/profile_history_circle_size"
+        android:layout_height="@dimen/profile_history_circle_size"
+        android:background="@drawable/circle"
+        android:backgroundTint="?attr/colorSecondaryDark"
+        app:layout_constraintBottom_toBottomOf="@id/word"
+        app:layout_constraintEnd_toStartOf="@id/word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/word" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/S"
+        android:background="?attr/colorSecondaryDark"
+        android:backgroundTint="?attr/colorSecondaryDark"
+        app:layout_constraintBottom_toBottomOf="@id/date"
+        app:layout_constraintEnd_toEndOf="@id/circle"
+        app:layout_constraintStart_toStartOf="@id/circle"
+        app:layout_constraintTop_toBottomOf="@id/circle" />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/XXL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="juice" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/XXL"
+        android:layout_marginTop="@dimen/S"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/word"
+        tools:text="food" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/XXL"
+        android:layout_marginTop="@dimen/S"
+        android:textColor="?attr/colorSecondaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/category"
+        tools:text="21 june 2019" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

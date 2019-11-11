@@ -6,6 +6,4 @@ import by.wolearn.learning.model.LearningRepository
 
 class ProfileViewModel(
     val repository: LearningRepository
-) : ViewModel() {
-
-}
+) : ViewModel()

@@ -5,8 +5,4 @@ import by.wolearn.login.model.RegistrationRepository
 
 class RegistrationViewModel(
     val repository: RegistrationRepository
-) : ViewModel() {
-
-
-
-}
+) : ViewModel()

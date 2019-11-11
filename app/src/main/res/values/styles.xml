@@ -1,14 +1,52 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorSecondary">@color/colorSecondary</item>
+    <style name="VioletTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/violetColorPrimary</item>
+        <item name="colorPrimaryDark">@color/violetColorPrimaryDark</item>
+        <item name="colorPrimaryLight">@color/violetColorPrimaryLight</item>
+
+        <item name="colorSecondary">@color/violetColorSecondary</item>
+        <item name="colorSecondaryDark">@color/violetColorSecondaryDark</item>
+
+        <item name="android:textColorSecondary">@color/violetTextColorSecondary</item>
+        <item name="android:textColorPrimary">@color/violetTextColorPrimary</item>
+
+        <item name="colorError">@color/errorColor</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="materialButtonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="YellowTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/yellowColorPrimary</item>
+        <item name="colorPrimaryDark">@color/yellowColorPrimaryDark</item>
+        <item name="colorPrimaryLight">@color/yellowColorPrimaryLight</item>
+
+        <item name="colorSecondary">@color/yellowColorSecondary</item>
+        <item name="colorSecondaryDark">@color/yellowColorSecondaryDark</item>
+
+        <item name="android:textColorSecondary">@color/yellowTextColorSecondary</item>
+        <item name="android:textColorPrimary">@color/yellowTextColorPrimary</item>
+
         <item name="colorError">@color/errorColor</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="materialButtonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="StatText">
+        <item name="android:textColor">?attr/colorSecondaryDark</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="StatTitle" parent="StatText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSecondary</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
 </resources>

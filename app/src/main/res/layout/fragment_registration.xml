@@ -11,7 +11,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_login"
+        android:hint="@string/login_hint_login"
         app:layout_constraintBottom_toTopOf="@id/textInputPassword"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed">
@@ -30,7 +30,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
+        android:hint="@string/login_hint_password"
         app:layout_constraintBottom_toTopOf="@id/textInputName"
         app:layout_constraintTop_toBottomOf="@id/textInputLogin">
 
@@ -48,7 +48,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_name"
+        android:hint="@string/login_hint_name"
         app:layout_constraintBottom_toTopOf="@id/textInputSurname"
         app:layout_constraintTop_toBottomOf="@id/textInputPassword">
 
@@ -65,7 +65,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_surname"
+        android:hint="@string/login_hint_surname"
         app:layout_constraintBottom_toTopOf="@id/register"
         app:layout_constraintTop_toBottomOf="@id/textInputName">
 
@@ -81,7 +81,7 @@
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"
+        android:text="@string/login_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputSurname" />
 

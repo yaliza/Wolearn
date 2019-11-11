@@ -11,7 +11,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_login"
+        android:hint="@string/login_hint_login"
         app:layout_constraintBottom_toTopOf="@id/textInputPassword"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed">
@@ -30,7 +30,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
+        android:hint="@string/login_hint_password"
         app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintTop_toBottomOf="@id/textInputLogin">
 
@@ -56,7 +56,8 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"
+        android:text="@string/login_register"
+        android:textColor="?attr/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login" />
 

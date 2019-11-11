@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#512DA8</color>
-    <color name="colorPrimaryDark">#140078</color>
-    <color name="colorPrimaryLight">#8559DA</color>
-    <color name="colorSecondary">#FBC02D</color>
-    <color name="colorSecondaryDark">#C49000</color>
+    <color name="violetColorPrimary">#512DA8</color>
+    <color name="violetColorPrimaryDark">#140078</color>
+    <color name="violetColorPrimaryLight">#8559DA</color>
+    <color name="violetColorSecondary">#FBC02D</color>
+    <color name="violetColorSecondaryDark">#C49000</color>
+    <color name="violetTextColorSecondary">#FFFFFF</color>
+    <color name="violetTextColorPrimary">#000000</color>
+
     <color name="errorColor">#B00020</color>
-    <color name="textColorSecondary">#000000</color>
-    <color name="textColorPrimary">#FFFFFF</color>
     <color name="materialCardBackground">#FCFCFC</color>
     <color name="windowBackground">#FFFFFF</color>
-    <color name="colorAccent">@color/colorSecondary</color>
+
+    <color name="yellowColorPrimary">#FFEB3B</color>
+    <color name="yellowColorPrimaryDark">#C8B900</color>
+    <color name="yellowColorPrimaryLight">#FFFF72</color>
+    <color name="yellowColorSecondary">#9C27B0</color>
+    <color name="yellowColorSecondaryDark">#6A0080</color>
+    <color name="yellowTextColorSecondary">#000000</color>
+    <color name="yellowTextColorPrimary">#FFFFFF</color>
 </resources>

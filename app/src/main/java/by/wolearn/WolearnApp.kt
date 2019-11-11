@@ -1,6 +1,7 @@
 package by.wolearn
 
 import android.app.Application
+import by.wolearn.core.di.coreModule
 import by.wolearn.learning.di.learningModule
 import by.wolearn.login.di.loginModule
 import by.wolearn.login.di.registrationModule
@@ -15,7 +16,7 @@ class WolearnApp : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@WolearnApp)
-            modules(listOf(registrationModule, loginModule, learningModule, profileModule))
+            modules(listOf(coreModule, registrationModule, loginModule, learningModule, profileModule))
         }
     }
 }

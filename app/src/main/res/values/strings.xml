@@ -2,15 +2,34 @@
     <string name="app_name">Wolearn</string>
 
     <!--LOGIN AND REGISTRATION SCREENS-->
-    <string name="hint_login">Enter login</string>
-    <string name="hint_password">Enter password</string>
-    <string name="hint_name">Enter name</string>
-    <string name="hint_surname">Enter surname</string>
     <string name="login">Login</string>
-    <string name="register">Register</string>
+    <string name="login_hint_login">Enter login</string>
+    <string name="login_hint_password">Enter password</string>
+    <string name="login_hint_name">Enter name</string>
+    <string name="login_hint_surname">Enter surname</string>
+    <string name="login_register">Register</string>
 
     <!--MAIN MENU-->
     <string name="action_profile">Profile</string>
     <string name="action_learning">Learning</string>
     <string name="action_settings">Settings</string>
+
+    <!--SETTINGS-->
+    <string name="settings_reset_statistics">Reset statistics</string>
+    <string name="settings_delete_account">Delete account</string>
+    <string name="settings_logout">Logout</string>
+    <string name="settings_appearance">Appearance</string>
+
+    <!--SETTINGS KEYS-->
+    <string name="key_appearance">APPEARANCE</string>
+
+    <!--PROFILE-->
+    <string name="profile_total">Total</string>
+    <string name="profile_today">Today</string>
+    <string name="profile_categories">Categories</string>
+
+    <!--LEARNING-->
+    <string name="learning_start_new">Start learning new words</string>
+    <string name="learning_start_repeat">Repeat words</string>
+
 </resources>
