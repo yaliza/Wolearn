@@ -44,6 +44,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             }
 
         }
-        logout.setOnClickListener { findNavController().navigate(R.id.action_botoomNav_to_LoginFragment) }
+        logout.setOnClickListener { findNavController().navigate(R.id.action_bottomNav_to_LoginFragment) }
     }
 }

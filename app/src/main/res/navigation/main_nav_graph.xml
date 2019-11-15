@@ -57,19 +57,27 @@
             tools:layout="@layout/fragment_profile" />
 
         <fragment
-            android:id="@+id/learningFragment"
-            android:name="by.wolearn.learning.view.LearningFragment"
+            android:id="@+id/categoriesFragment"
+            android:name="by.wolearn.learning.view.CategoriesFragment"
             android:label="LearningFragment"
-            tools:layout="@layout/fragment_learning" />
+            tools:layout="@layout/fragment_categories" />
 
         <action
-            android:id="@+id/action_botoomNav_to_LoginFragment"
+            android:id="@+id/action_bottomNav_to_LoginFragment"
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@+id/bottomNavigation"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_bottomNav_to_WordFragment"
+            app:destination="@id/learningFragment" />
 
     </navigation>
+
+    <fragment
+        android:id="@+id/learningFragment"
+        android:name="by.wolearn.learning.view.LearningFragment"
+        android:label="WordFragment" />
 
 </navigation>

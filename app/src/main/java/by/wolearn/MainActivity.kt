@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         findNavController(R.id.navHostFragment).addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.loginFragment, R.id.registrationFragment -> {
+                R.id.loginFragment, R.id.registrationFragment, R.id.learningFragment -> {
                     bottomMenu.hide()
                     toolbar.hide()
                 }

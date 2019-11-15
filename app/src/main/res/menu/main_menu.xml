@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/learningFragment"
+        android:id="@+id/categoriesFragment"
         android:icon="@drawable/ic_learning"
         android:title="@string/action_learning"
         app:showAsAction="ifRoom" />

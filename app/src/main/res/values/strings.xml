@@ -31,5 +31,7 @@
     <!--LEARNING-->
     <string name="learning_start_new">Start learning new words</string>
     <string name="learning_start_repeat">Repeat words</string>
+    <string name="learning_familiar_word">I know this word</string>
+    <string name="learning_unfamiliar_word">I don\'t know this word</string>
 
 </resources>
