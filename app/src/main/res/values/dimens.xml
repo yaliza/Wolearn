@@ -16,4 +16,11 @@
 
     <!--LEARNING-->
     <dimen name="category_image_size">50dp</dimen>
+
+    <!--WORD CARD-->
+    <dimen name="word_card_action_button_width">130dp</dimen>
+
+    <!--ACTION BUTTON-->
+    <dimen name="action_image_size">40dp</dimen>
+
 </resources>

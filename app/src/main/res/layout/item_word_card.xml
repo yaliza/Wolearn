@@ -1,57 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/wordCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
-    android:padding="@dimen/XS">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/unfamiliarWord"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/XS"
-        android:text="@string/learning_unfamiliar_word"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/familiarWord"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wordCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/XS">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/familiarWord"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/XS"
-        android:text="@string/learning_familiar_word"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/unfamiliarWord" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/unfamiliarWord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/XS"
+            android:text="@string/learning_unfamiliar_word"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/familiarWord"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="banana" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/familiarWord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/XS"
+            android:text="@string/learning_familiar_word"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/unfamiliarWord" />
 
-    <ImageView
-        android:id="@+id/closeWord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_close"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="banana" />
 
-    <ImageView
-        android:id="@+id/pronounceWord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_volume"
-        app:layout_constraintEnd_toStartOf="@id/closeWord"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/transcription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/S"
+            app:layout_constraintStart_toEndOf="@id/word"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="[banana]" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/S"
+            app:layout_constraintStart_toEndOf="@id/transcription"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="adj" />
+
+        <ImageView
+            android:id="@+id/closeWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/pronounceWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volume"
+            app:layout_constraintEnd_toStartOf="@id/closeWord"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <by.wolearn.core.view.ActionButton
+            android:id="@+id/showDescription"
+            android:layout_width="@dimen/word_card_action_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/L"
+            app:action_image="@drawable/ic_eye"
+            app:layout_constraintEnd_toStartOf="@id/showOptions"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word" />
+
+        <by.wolearn.core.view.ActionButton
+            android:id="@+id/showOptions"
+            android:layout_width="@dimen/word_card_action_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/XL"
+            android:layout_marginTop="@dimen/L"
+            app:action_image="@drawable/ic_options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/showDescription"
+            app:layout_constraintTop_toBottomOf="@id/word" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

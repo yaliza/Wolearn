@@ -2,4 +2,9 @@
 <resources>
     <attr name="colorSecondaryDark" format="reference"/>
     <attr name="colorPrimaryLight" format="reference"/>
+    <attr name="materialCardBackground" format="reference"/>
+
+    <declare-styleable name="ActionButton">
+        <attr name="action_image" format="reference" />
+    </declare-styleable>
 </resources>

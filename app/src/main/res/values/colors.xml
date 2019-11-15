@@ -9,8 +9,8 @@
     <color name="violetTextColorPrimary">#000000</color>
 
     <color name="errorColor">#B00020</color>
-    <color name="materialCardBackground">#FCFCFC</color>
-    <color name="windowBackground">#FFFFFF</color>
+    <color name="violetMaterialCardBackground">#FCFCFC</color>
+    <color name="violetWindowBackground">#FFFFFF</color>
 
     <color name="yellowColorPrimary">#FFEB3B</color>
     <color name="yellowColorPrimaryDark">#C8B900</color>
