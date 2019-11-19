@@ -1,4 +1,4 @@
-package by.wolearn.learning.view
+package by.wolearn.learning.view.adapters
 
 import android.view.LayoutInflater
 import android.view.View

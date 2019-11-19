@@ -1,4 +1,4 @@
-package by.wolearn.learning.view
+package by.wolearn.learning.view.fragments
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.wolearn.R
+import by.wolearn.learning.view.adapters.CategoriesAdapter
 import by.wolearn.learning.viewmodel.CategoriesViewModel
 import kotlinx.android.synthetic.main.fragment_categories.*
 import org.koin.android.viewmodel.ext.android.viewModel

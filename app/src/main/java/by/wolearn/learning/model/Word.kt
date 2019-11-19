@@ -5,5 +5,6 @@ data class Word(
     val name: String,
     val definitions: List<String>,
     val pos: String,
-    val transcription: String
+    val transcription: String,
+    var state: WordState = WordState.UNKNOWN
 )

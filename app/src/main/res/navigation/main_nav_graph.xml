@@ -58,7 +58,7 @@
 
         <fragment
             android:id="@+id/categoriesFragment"
-            android:name="by.wolearn.learning.view.CategoriesFragment"
+            android:name="by.wolearn.learning.view.fragments.CategoriesFragment"
             android:label="LearningFragment"
             tools:layout="@layout/fragment_categories" />
 
@@ -77,7 +77,7 @@
 
     <fragment
         android:id="@+id/learningFragment"
-        android:name="by.wolearn.learning.view.LearningFragment"
+        android:name="by.wolearn.learning.view.fragments.LearningFragment"
         android:label="WordFragment" />
 
 </navigation>

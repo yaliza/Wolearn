@@ -6,7 +6,5 @@ import org.koin.dsl.module
 
 
 val coreModule = module {
-
     single { get<Context>().getSharedPreferences("prefs", MODE_PRIVATE) }
-
 }
