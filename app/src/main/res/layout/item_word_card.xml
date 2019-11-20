@@ -12,10 +12,11 @@
         android:padding="@dimen/XS">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/unmomorizeWord"
+            android:id="@+id/unmemorizeWord"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/XS"
+            android:backgroundTint="@color/unmemorize_selector"
             android:text="@string/learning_unfamiliar_word"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -27,11 +28,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/XS"
+            android:backgroundTint="@color/memorize_selector"
             android:text="@string/learning_familiar_word"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/unmomorizeWord" />
+            app:layout_constraintStart_toEndOf="@id/unmemorizeWord" />
 
         <TextView
             android:id="@+id/word"

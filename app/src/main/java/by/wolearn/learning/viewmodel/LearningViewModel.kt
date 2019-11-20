@@ -25,18 +25,14 @@ class LearningViewModel(val repository: LearningRepository) : ViewModel() {
         )
     }
 
-    fun saveWord(wordItem: WordItem) {
+    fun saveWord(wordItem: WordItem, direction: Direction?) {
         viewModelScope.launch {
 
         }
     }
 
     fun changeWordState(wordItem: WordItem, direction: Direction?) {
-        wordItem.localWordState = when (direction) {
-            Direction.Right -> WordState.MEMORIZED
-            Direction.Left -> WordState.UNMEMORIZED
-            else -> wordItem.word.state
-        }
+
     }
 
 }

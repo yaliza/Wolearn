@@ -6,6 +6,5 @@ import by.wolearn.learning.model.WordState
 
 data class WordItem(
     val word: Word,
-    var viewState: WordItemViewState = WordItemViewState.PREVIEW,
-    var localWordState: WordState = word.state
+    var viewState: WordItemViewState = WordItemViewState.PREVIEW
 )

@@ -14,15 +14,18 @@ class WordCardViewHolder(override val containerView: View) : LayoutContainer,
     }
 
     fun unknown() {
-
+        unmemorizeWord.isSelected = false
+        memorizeWord.isSelected = false
     }
 
     fun memorize() {
-
+        unmemorizeWord.isSelected = false
+        memorizeWord.isSelected = true
     }
 
     fun unmemorize() {
-
+        unmemorizeWord.isSelected = true
+        memorizeWord.isSelected = false
     }
 
     fun options() {
