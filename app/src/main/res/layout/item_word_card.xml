@@ -79,6 +79,7 @@
 
         <by.wolearn.core.view.ActionButton
             android:id="@+id/showDescription"
+            style="@style/ActionButtonStyle"
             android:layout_width="@dimen/word_card_action_button_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/L"
@@ -90,6 +91,7 @@
 
         <by.wolearn.core.view.ActionButton
             android:id="@+id/showOptions"
+            style="@style/ActionButtonStyle"
             android:layout_width="@dimen/word_card_action_button_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/XL"
@@ -97,6 +99,28 @@
             app:action_image="@drawable/ic_options"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/showDescription"
+            app:layout_constraintTop_toBottomOf="@id/word" />
+
+        <include
+            android:id="@+id/wordDetails"
+            layout="@layout/view_word_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/XXL"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/memorizeWord"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word" />
+
+        <by.wolearn.core.view.OptionsView
+            android:id="@+id/options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/XXL"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/word" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,4 +23,8 @@
     <!--ACTION BUTTON-->
     <dimen name="action_image_size">40dp</dimen>
 
+    <!--OPTION VIEW-->
+    <dimen name="option_view_width">150dp</dimen>
+    <dimen name="option_view_height">100dp</dimen>
+
 </resources>

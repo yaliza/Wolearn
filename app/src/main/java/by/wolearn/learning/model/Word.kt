@@ -6,5 +6,6 @@ data class Word(
     val definitions: List<String>,
     val pos: String,
     val transcription: String,
+    val examples: List<String>,
     var state: WordState = WordState.UNKNOWN
 )
