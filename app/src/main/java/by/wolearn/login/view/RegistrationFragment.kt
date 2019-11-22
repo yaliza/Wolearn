@@ -10,13 +10,13 @@ import kotlinx.android.synthetic.main.fragment_registration.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class RegistrationFragment : Fragment(R.layout.fragment_registration)  {
+class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
-    val model : RegistrationViewModel by viewModel()
+    val model: RegistrationViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        register.setOnClickListener { findNavController().navigate(R.id.action_registrationFragment_to_bottomNavigation) }
+        register.setOnClickListener { findNavController().navigate(R.id.action_registrationFragment_to_bottomNavigationFragment) }
     }
 
 }

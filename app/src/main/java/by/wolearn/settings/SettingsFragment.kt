@@ -8,13 +8,14 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import by.wolearn.R
 import kotlinx.android.synthetic.main.fragment_settings.*
 import org.koin.android.ext.android.inject
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
+    private val mainNavController by lazy { requireActivity().findNavController(R.id.mainNavHostFragment) }
     val prefs: SharedPreferences by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,6 +45,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             }
 
         }
-        logout.setOnClickListener { findNavController().navigate(R.id.action_bottomNav_to_LoginFragment) }
+        logout.setOnClickListener { mainNavController.navigate(R.id.action_global_loginFragment) }
     }
 }

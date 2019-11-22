@@ -17,10 +17,8 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
         <action
-            android:id="@+id/action_loginFragment_to_bottomNavigation"
-            app:destination="@id/bottomNavigation"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
+            android:id="@+id/action_loginFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment"
             app:popUpTo="@+id/loginFragment"
             app:popUpToInclusive="true" />
 
@@ -32,52 +30,30 @@
         android:label="RegistrationFragment"
         tools:layout="@layout/fragment_registration">
         <action
-            android:id="@+id/action_registrationFragment_to_bottomNavigation"
-            app:destination="@id/bottomNavigation"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
+            android:id="@+id/action_registrationFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment"
             app:popUpTo="@+id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
-    <navigation
-        android:id="@+id/bottomNavigation"
-        app:startDestination="@id/profileFragment">
-
-        <fragment
-            android:id="@+id/settingsFragment"
-            android:name="by.wolearn.settings.SettingsFragment"
-            android:label="SettingsFragment"
-            tools:layout="@layout/fragment_settings" />
-
-        <fragment
-            android:id="@+id/profileFragment"
-            android:name="by.wolearn.profile.view.ProfileFragment"
-            android:label="MainFragment"
-            tools:layout="@layout/fragment_profile" />
-
-        <fragment
-            android:id="@+id/categoriesFragment"
-            android:name="by.wolearn.learning.view.fragments.CategoriesFragment"
-            android:label="LearningFragment"
-            tools:layout="@layout/fragment_categories" />
-
-        <action
-            android:id="@+id/action_bottomNav_to_LoginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popUpTo="@+id/bottomNavigation"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_bottomNav_to_WordFragment"
-            app:destination="@id/learningFragment" />
-
-    </navigation>
 
     <fragment
         android:id="@+id/learningFragment"
         android:name="by.wolearn.learning.view.fragments.LearningFragment"
         android:label="WordFragment" />
+
+    <fragment
+        android:id="@+id/bottomNavigationFragment"
+        android:name="by.wolearn.core.view.BottomNavigationFragment"
+        android:label="BottomNavigationFragment" >
+        <action
+            android:id="@+id/action_bottomNavigationFragment_to_learningFragment"
+            app:destination="@id/learningFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/loginFragment"
+        app:popUpToInclusive="true" />
 
 </navigation>

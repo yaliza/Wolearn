@@ -12,11 +12,12 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
-    val model : LoginViewModel by viewModel()
+    private val mainNavController by lazy { findNavController() }
+    val model: LoginViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         register.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_registrationFragment) }
-        login.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_bottomNavigation) }
+        login.setOnClickListener { mainNavController.navigate(R.id.action_loginFragment_to_bottomNavigationFragment) }
     }
 }

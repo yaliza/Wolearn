@@ -3,7 +3,7 @@ package by.wolearn.learning.view.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.wolearn.R
 import by.wolearn.learning.view.adapters.CategoriesAdapter
@@ -13,6 +13,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class CategoriesFragment : Fragment(R.layout.fragment_categories) {
 
+    private val mainNavController by lazy { requireActivity().findNavController(R.id.mainNavHostFragment) }
     val model: CategoriesViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -20,8 +21,8 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
         val adapter = CategoriesAdapter()
         categories.adapter = adapter
         categories.layoutManager = LinearLayoutManager(activity)
-        learnWords.setOnClickListener { findNavController().navigate(R.id.action_bottomNav_to_WordFragment) }
-        repeatWords.setOnClickListener { findNavController().navigate(R.id.action_bottomNav_to_WordFragment) }
+        learnWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
+        repeatWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
     }
 
 }
