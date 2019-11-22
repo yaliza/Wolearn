@@ -13,12 +13,15 @@ import kotlinx.android.synthetic.main.item_word_card.*
 class WordCardViewHolder(override val containerView: View) : LayoutContainer,
     RecyclerView.ViewHolder(containerView) {
 
-    fun bind(wrd: WordItem) {
-        word.text = wrd.word.name
+    fun bind(item: WordItem) {
+        word.text = item.word.name
+        pos.text = item.word.pos
+        transcription.text = item.word.transcription
+
         unknown()
         options.resetOptions()
-        options.setupTitles(wrd.word.definitions, 0)
-        when (wrd.viewState) {
+        options.setupTitles(item.word.quiz)
+        when (item.viewState) {
             WordItemViewState.PREVIEW -> showPreview()
             WordItemViewState.DETAILS -> showDescription()
             WordItemViewState.OPTIONS -> showOptions()

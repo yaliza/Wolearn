@@ -1,11 +1,12 @@
-package by.wolearn.learning.model
+package by.wolearn.learning.model.entities
 
 
 data class Word(
+    val id: Int,
     val name: String,
-    val definitions: List<String>,
     val pos: String,
     val transcription: String,
     val examples: List<String>,
-    var state: WordState = WordState.UNKNOWN
+    val quiz: Quiz,
+    val isMemorized: Boolean = false
 )

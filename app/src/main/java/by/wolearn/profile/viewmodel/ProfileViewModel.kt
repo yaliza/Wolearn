@@ -1,9 +1,9 @@
 package by.wolearn.profile.viewmodel
 
 import androidx.lifecycle.ViewModel
-import by.wolearn.learning.model.LearningRepository
+import by.wolearn.profile.model.ProfileRepository
 
 
 class ProfileViewModel(
-    val repository: LearningRepository
+    val repository: ProfileRepository
 ) : ViewModel()

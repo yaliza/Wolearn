@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import by.wolearn.R
+import by.wolearn.learning.model.entities.Quiz
 import kotlinx.android.synthetic.main.view_options.view.*
 
 class OptionsView @JvmOverloads constructor(
@@ -21,9 +22,9 @@ class OptionsView @JvmOverloads constructor(
         optionViews.forEach { it.setOnClickListener(this) }
     }
 
-    fun setupTitles(titles: List<String>, indexOfRight: Int) {
-        this.indexOfRight = indexOfRight
-        optionViews.forEachIndexed { i, opt -> opt.title = titles[i] }
+    fun setupTitles(quiz: Quiz) {
+        indexOfRight = quiz.indexOfRight
+        optionViews.forEachIndexed { i, opt -> opt.title = quiz.options[i] }
     }
 
     override fun onClick(view: View) {

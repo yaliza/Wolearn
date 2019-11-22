@@ -1,7 +1,6 @@
 package by.wolearn.learning.view.entities
 
-import by.wolearn.learning.model.Word
-import by.wolearn.learning.model.WordState
+import by.wolearn.learning.model.entities.Word
 
 
 data class WordItem(

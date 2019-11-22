@@ -1,9 +1,14 @@
 package by.wolearn.learning.viewmodel
 
-import androidx.lifecycle.ViewModel
-import by.wolearn.learning.model.LearningRepository
+import androidx.lifecycle.*
+import by.wolearn.learning.model.entities.Category
+import by.wolearn.learning.model.repositories.CategoriesRepository
 
 
 class CategoriesViewModel(
-    val repository: LearningRepository
-) : ViewModel()
+    private val repository: CategoriesRepository
+) : ViewModel() {
+
+    val categories: LiveData<List<Category>> = liveData { emit(repository.getCategories()) }
+
+}

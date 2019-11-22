@@ -3,6 +3,7 @@ package by.wolearn.learning.view.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.wolearn.R
@@ -23,6 +24,8 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
         categories.layoutManager = LinearLayoutManager(activity)
         learnWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
         repeatWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
+
+        model.categories.observe(viewLifecycleOwner, Observer { adapter.items = it })
     }
 
 }
