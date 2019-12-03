@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <by.wolearn.core.view.OptionView
+    <by.wolearn.core.view.views.OptionView
         android:id="@+id/option1"
         style="@style/OptionViewStyle"
         app:layout_constraintBottom_toTopOf="@id/option3"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <by.wolearn.core.view.OptionView
+    <by.wolearn.core.view.views.OptionView
         android:id="@+id/option2"
         style="@style/OptionViewStyle"
         app:layout_constraintBottom_toTopOf="@id/option4"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <by.wolearn.core.view.OptionView
+    <by.wolearn.core.view.views.OptionView
         android:id="@+id/option3"
         style="@style/OptionViewStyle"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/option1" />
 
-    <by.wolearn.core.view.OptionView
+    <by.wolearn.core.view.views.OptionView
         android:id="@+id/option4"
         style="@style/OptionViewStyle"
         app:layout_constraintBottom_toBottomOf="parent"

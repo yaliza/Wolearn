@@ -44,16 +44,26 @@
 
     <fragment
         android:id="@+id/bottomNavigationFragment"
-        android:name="by.wolearn.core.view.BottomNavigationFragment"
+        android:name="by.wolearn.core.view.fragments.BottomNavigationFragment"
         android:label="BottomNavigationFragment" >
         <action
             android:id="@+id/action_bottomNavigationFragment_to_learningFragment"
             app:destination="@id/learningFragment" />
     </fragment>
+
     <action
         android:id="@+id/action_global_loginFragment"
         app:destination="@id/loginFragment"
         app:popUpTo="@id/loginFragment"
         app:popUpToInclusive="true" />
+
+    <dialog
+        android:id="@+id/progressDialogFragment"
+        android:name="by.wolearn.core.view.fragments.ProgressDialogFragment"
+        android:label="ProgressDialogFragment" />
+
+    <action
+        android:id="@+id/action_global_ProgressDialogFragment"
+        app:destination="@id/progressDialogFragment" />
 
 </navigation>

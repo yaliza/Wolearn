@@ -1,4 +1,4 @@
-package by.wolearn.core.view
+package by.wolearn.core.view.views
 
 import android.content.Context
 import android.util.AttributeSet

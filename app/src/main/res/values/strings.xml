@@ -34,4 +34,10 @@
     <string name="learning_familiar_word">Know</string>
     <string name="learning_unfamiliar_word">Don\'t know</string>
 
+    <string name="error_network">No internet connection</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_http">Error with status %d and message %s </string>
+
+    <string name="progress">Wait, please</string>
+
 </resources>

@@ -5,12 +5,18 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import by.wolearn.R
+import by.wolearn.core.utils.mainNavController
+import by.wolearn.core.utils.showError
+import by.wolearn.core.utils.showProgress
+import by.wolearn.core.view.entities.Resource
+import by.wolearn.core.view.entities.ResourceObserver
 import by.wolearn.learning.view.adapters.WordCardAdapter
 import by.wolearn.learning.view.adapters.WordCardListener
 import by.wolearn.learning.view.entities.WordItem
 import by.wolearn.learning.viewmodel.LearningViewModel
 import com.yuyakaido.android.cardstackview.*
 import kotlinx.android.synthetic.main.fragment_learning.*
+import kotlinx.android.synthetic.main.item_history.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class LearningFragment : Fragment(R.layout.fragment_learning), CardStackListener {
@@ -39,7 +45,14 @@ class LearningFragment : Fragment(R.layout.fragment_learning), CardStackListener
         cardStack.adapter = adapter
         cardStack.layoutManager = manager
 
-        model.words.observe(viewLifecycleOwner, Observer { adapter.items = it })
+        model.words.observe(viewLifecycleOwner, object : ResourceObserver<List<WordItem>>() {
+            override fun onLoad() = showProgress(true)
+            override fun onSuccess(data: List<WordItem>?) = data?.let { adapter.items = data }
+            override fun onError(error: Resource.Error<List<WordItem>>) {
+                showError(error)
+                mainNavController.popBackStack()
+            }
+        })
     }
 
     override fun onCardAppeared(view: View?, position: Int) {}
