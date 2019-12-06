@@ -1,10 +1,13 @@
 package by.wolearn.learning.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
 import by.wolearn.core.view.entities.Resource
 import by.wolearn.learning.model.entities.Category
 import by.wolearn.learning.model.repositories.CategoriesRepository
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -13,10 +16,7 @@ class CategoriesViewModel(
 ) : ViewModel() {
 
     val categories: LiveData<Resource<List<Category>>> = liveData {
-        emit(Resource.Loading<List<Category>>())
-        delay(1000)
-        val result = repository.getCategories()
-        emit(result)
+        repository.getCategories().collect { emit(it) }
     }
 
     fun update(category: Category, isSelected: Boolean) {

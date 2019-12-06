@@ -2,6 +2,7 @@ package by.wolearn.core.model
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import by.wolearn.learning.model.entities.Category
 
 
 interface Storage<T> {
@@ -27,4 +28,18 @@ class TokenStorage(prefs: SharedPreferences) : PrefsStorage<Token>(prefs) {
         prefs.edit { remove(STORAGE_TOKEN) }
     }
 
+}
+
+class CategoriesStorage : Storage<List<Category>> {
+    private var categories: List<Category>? = null
+
+    override fun get() = categories
+
+    override fun store(storeItem: List<Category>) {
+        categories = storeItem
+    }
+
+    override fun delete() {
+        categories = null
+    }
 }

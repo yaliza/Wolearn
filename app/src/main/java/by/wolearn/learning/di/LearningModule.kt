@@ -11,7 +11,7 @@ import org.koin.dsl.module
 val learningModule = module {
 
     single { LearningRepository(get()) }
-    single { CategoriesRepository(get()) }
+    single { CategoriesRepository(get(), get()) }
     viewModel { CategoriesViewModel(get()) }
     viewModel { LearningViewModel(get()) }
 
