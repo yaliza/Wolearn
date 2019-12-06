@@ -8,6 +8,7 @@ const val LOGIN = "login"
 const val REGISTER = "register"
 const val USER = "user"
 const val HISTORY = "history"
+const val RESET_STATISTICS = "reset_statistics"
 
 const val PARAM_OFFSET = "offset"
 const val PARAM_NUM = "num"

@@ -1,4 +1,4 @@
-package by.wolearn.settings
+package by.wolearn.settings.view
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,14 +8,22 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import by.wolearn.R
 import by.wolearn.core.utils.mainNavController
+import by.wolearn.core.utils.showError
+import by.wolearn.core.utils.showProgress
+import by.wolearn.core.view.entities.Resource
+import by.wolearn.core.view.entities.ResourceObserver
+import by.wolearn.settings.viewmodel.SettingsViewModel
 import kotlinx.android.synthetic.main.fragment_settings.*
 import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     val prefs: SharedPreferences by inject()
+    val model: SettingsViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,6 +54,18 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             }
 
         }
-        logout.setOnClickListener { mainNavController.navigate(R.id.action_global_loginFragment) }
+        resetStatistics.setOnClickListener { model.resetStatistics() }
+        logout.setOnClickListener { model.logout() }
+
+        model.logout.observe(
+            viewLifecycleOwner,
+            Observer { mainNavController.navigate(R.id.action_global_loginFragment) })
+        model.statReset.observe(viewLifecycleOwner, object : ResourceObserver<Unit>() {
+            override fun onError(error: Resource.Error<Unit>) = showError(error)
+            override fun onLoad() = showProgress(true)
+            override fun onSuccess(data: Unit?) {
+                showProgress(false)
+            }
+        })
     }
 }

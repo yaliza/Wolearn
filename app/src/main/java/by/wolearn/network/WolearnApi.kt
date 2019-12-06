@@ -35,4 +35,7 @@ interface WolearnApi {
 
     @GET("$USER/$HISTORY")
     suspend fun getHistory(@Query(PARAM_OFFSET) offset: Int = 0, @Query(PARAM_NUM) num: Int = 20): List<HistoryWord>
+
+    @POST("$USER/$RESET_STATISTICS")
+    suspend fun resetStatistics()
 }

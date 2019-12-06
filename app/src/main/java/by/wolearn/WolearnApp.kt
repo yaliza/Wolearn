@@ -3,6 +3,7 @@ package by.wolearn
 import android.app.Application
 import by.wolearn.core.di.coreModule
 import by.wolearn.learning.di.learningModule
+import by.wolearn.settings.di.settingsModule
 import by.wolearn.login.di.loginModule
 import by.wolearn.login.di.registrationModule
 import by.wolearn.network.di.networkModule
@@ -24,7 +25,8 @@ class WolearnApp : Application() {
                     registrationModule,
                     loginModule,
                     learningModule,
-                    profileModule
+                    profileModule,
+                    settingsModule
                 )
             )
         }
