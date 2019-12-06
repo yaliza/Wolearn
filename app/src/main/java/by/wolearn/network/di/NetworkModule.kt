@@ -11,7 +11,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 val networkModule = module {
 
     single {
-        OkHttpClient.Builder().addInterceptor(WolearnInterceptor()).build()
+        OkHttpClient
+            .Builder()
+            .addInterceptor(WolearnInterceptor(get()))
+            .build()
     }
 
     single {

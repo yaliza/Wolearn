@@ -11,7 +11,7 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "by.wolearn"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -78,6 +78,9 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    def encrypted_version = "1.0.0-alpha02"
+    implementation "androidx.security:security-crypto:$encrypted_version"
 
     testImplementation 'junit:junit:4.12'
 }

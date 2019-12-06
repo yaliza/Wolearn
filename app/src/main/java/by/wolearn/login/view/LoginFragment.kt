@@ -3,9 +3,11 @@ package by.wolearn.login.view
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import by.wolearn.R
 import by.wolearn.core.utils.mainNavController
 import by.wolearn.core.utils.showError
+import by.wolearn.core.utils.showMessage
 import by.wolearn.core.utils.showProgress
 import by.wolearn.core.view.entities.Resource
 import by.wolearn.core.view.entities.ResourceObserver
@@ -34,5 +36,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 mainNavController.navigate(R.id.action_loginFragment_to_bottomNavigationFragment)
             }
         })
+
+        model.validationError.observe(viewLifecycleOwner, Observer { showMessage(it) })
     }
 }

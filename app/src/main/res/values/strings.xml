@@ -8,6 +8,8 @@
     <string name="login_hint_name">Enter name</string>
     <string name="login_hint_surname">Enter surname</string>
     <string name="login_register">Register</string>
+    <string name="login_empty_name">Login cannot be empty</string>
+    <string name="login_empty_password">Password cannot be empty</string>
 
     <!--MAIN MENU-->
     <string name="action_profile">Profile</string>

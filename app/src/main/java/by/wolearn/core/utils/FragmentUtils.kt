@@ -7,6 +7,8 @@ import by.wolearn.core.view.entities.Resource
 import com.google.android.material.snackbar.Snackbar
 
 
+fun Fragment.showMessage(strId: Int) = showMessage(getString(strId))
+
 fun Fragment.showMessage(msg: String) {
     view?.let { Snackbar.make(it, msg, Snackbar.LENGTH_LONG).show() }
 }

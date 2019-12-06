@@ -8,14 +8,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import by.wolearn.R
+import by.wolearn.core.utils.mainNavController
 import kotlinx.android.synthetic.main.fragment_settings.*
 import org.koin.android.ext.android.inject
 
-class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
-    private val mainNavController by lazy { requireActivity().findNavController(R.id.mainNavHostFragment) }
+class SettingsFragment : Fragment(R.layout.fragment_settings) {
     val prefs: SharedPreferences by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,8 +35,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                     override fun onNothingSelected(p0: AdapterView<*>?) {}
                     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                         val newTheme = appearance.selectedItem.toString()
-                        prefs.edit {
-                            putString(getString(R.string.key_appearance), newTheme)
+                        if (prefs.getString(getString(R.string.key_appearance), null) != newTheme) {
+                            prefs.edit {
+                                putString(getString(R.string.key_appearance), newTheme)
+                            }
                         }
                     }
                 }
