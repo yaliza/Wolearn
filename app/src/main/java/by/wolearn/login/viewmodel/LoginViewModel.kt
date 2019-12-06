@@ -24,8 +24,8 @@ class LoginViewModel(private val repository: LoginRepository) : ViewModel() {
                 validationError.postValue(R.string.login_empty_password)
                 return@launch
             }
-            val resp = repository.login(login, password)
             loginResult.postValue(Resource.Loading())
+            val resp = repository.login(login, password)
             loginResult.postValue(resp)
         }
     }
