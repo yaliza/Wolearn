@@ -1,9 +1,10 @@
 package by.wolearn.learning.view.fragments
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import by.wolearn.R
 import by.wolearn.core.utils.mainNavController
 import by.wolearn.core.utils.showError
@@ -14,16 +15,29 @@ import by.wolearn.learning.view.adapters.WordCardAdapter
 import by.wolearn.learning.view.adapters.WordCardListener
 import by.wolearn.learning.view.entities.WordItem
 import by.wolearn.learning.viewmodel.LearningViewModel
-import com.yuyakaido.android.cardstackview.*
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager
+import com.yuyakaido.android.cardstackview.CardStackListener
+import com.yuyakaido.android.cardstackview.Direction
+import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import kotlinx.android.synthetic.main.fragment_learning.*
-import kotlinx.android.synthetic.main.item_history.*
+import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class LearningFragment : Fragment(R.layout.fragment_learning), CardStackListener {
 
+    val args: LearningFragmentArgs by navArgs()
+    val textToSpeech by inject<TextToSpeech>()
     private lateinit var manager: CardStackLayoutManager
     private lateinit var adapter: WordCardAdapter
     private val wordCardListener = object : WordCardListener {
+        override fun onPronounce(wordItem: WordItem) {
+            textToSpeech.speak(wordItem.word.name, TextToSpeech.QUEUE_FLUSH, null, null)
+        }
+
+        override fun onCloseWord() {
+            mainNavController.popBackStack()
+        }
+
         override fun onMemorizeWord(wordItem: WordItem) {
             swipeAndSave(wordItem, Direction.Right)
         }
@@ -37,6 +51,8 @@ class LearningFragment : Fragment(R.layout.fragment_learning), CardStackListener
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        model.isRepeatingMode = args.isRepeating
+        model.loadWords()
         adapter = WordCardAdapter(wordCardListener)
 
         manager = CardStackLayoutManager(activity, this)

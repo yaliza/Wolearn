@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.item_word_card.view.*
 interface WordCardListener {
     fun onMemorizeWord(wordItem: WordItem)
     fun onUnmemorizeWord(wordItem: WordItem)
+    fun onCloseWord()
+    fun onPronounce(wordItem: WordItem)
 }
 
 class WordCardAdapter(private val wordCardListener: WordCardListener?) :
@@ -36,6 +38,8 @@ class WordCardAdapter(private val wordCardListener: WordCardListener?) :
                 items[holder.adapterPosition].viewState = WordItemViewState.OPTIONS
                 holder.showOptions()
             }
+            pronounceWord.setOnClickListener { wordCardListener?.onPronounce(items[holder.adapterPosition]) }
+            closeWord.setOnClickListener { wordCardListener?.onCloseWord() }
         }
         return holder
     }

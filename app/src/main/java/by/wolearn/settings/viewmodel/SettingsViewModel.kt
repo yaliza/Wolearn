@@ -12,6 +12,7 @@ class SettingsViewModel(
     private val repository: SettingsRepository
 ) : ViewModel() {
 
+    val deleteAccount = MutableLiveData<Resource<Unit>>()
     val statReset = MutableLiveData<Resource<Unit>>()
     val logout = MutableLiveData<Unit>()
 
@@ -26,6 +27,14 @@ class SettingsViewModel(
         viewModelScope.launch {
             repository.logout()
             logout.postValue(Unit)
+        }
+    }
+
+    fun deleteAccount() {
+        viewModelScope.launch {
+            deleteAccount.postValue(Resource.Loading())
+            val res = repository.deleteAccount()
+            deleteAccount.postValue(res)
         }
     }
 }

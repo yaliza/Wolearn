@@ -9,12 +9,10 @@ class WolearnInterceptor(private val tokenStorage: TokenStorage) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        val url =
-            request.url()
-                .newBuilder()
-                .addQueryParameter(PARAM_TOKEN, tokenStorage.get()?.token)
+        val headers =
+            request.headers().newBuilder().add("Authorization", "Bearer ${tokenStorage.get()?.token}")
                 .build()
-        request = request.newBuilder().url(url).build()
+        request = request.newBuilder().headers(headers).build()
         return chain.proceed(request)
     }
 

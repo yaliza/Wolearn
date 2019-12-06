@@ -56,6 +56,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         }
         resetStatistics.setOnClickListener { model.resetStatistics() }
         logout.setOnClickListener { model.logout() }
+        deleteAccount.setOnClickListener { model.deleteAccount() }
 
         model.logout.observe(
             viewLifecycleOwner,
@@ -65,6 +66,14 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             override fun onLoad() = showProgress(true)
             override fun onSuccess(data: Unit?) {
                 showProgress(false)
+            }
+        })
+        model.deleteAccount.observe(viewLifecycleOwner, object: ResourceObserver<Unit>() {
+            override fun onError(error: Resource.Error<Unit>) = showError(error)
+            override fun onLoad() = showProgress(true)
+            override fun onSuccess(data: Unit?) {
+                showProgress(false)
+                mainNavController.navigate(R.id.action_global_loginFragment)
             }
         })
     }

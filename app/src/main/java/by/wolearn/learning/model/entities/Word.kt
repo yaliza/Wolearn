@@ -7,6 +7,5 @@ data class Word(
     val pos: String,
     val transcription: String,
     val examples: List<String>,
-    val quiz: Quiz,
-    val isMemorized: Boolean = false
+    val quiz: Quiz
 )

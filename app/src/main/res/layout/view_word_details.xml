@@ -22,25 +22,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider" />
 
-    <TextView
-        android:id="@+id/example1"
+    <LinearLayout
+        android:id="@+id/examples"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/L"
-        android:text="it is a sample example 1"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/XL"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wordDefinition" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/XS"
-        android:text="it is a sample example 2"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/example1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

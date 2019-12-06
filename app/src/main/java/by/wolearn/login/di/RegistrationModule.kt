@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 val registrationModule = module {
 
-    single { RegistrationRepository(get()) }
+    single { RegistrationRepository(get(), get()) }
     viewModel { RegistrationViewModel(get()) }
 
 }

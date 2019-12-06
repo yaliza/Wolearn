@@ -10,6 +10,7 @@ import by.wolearn.core.utils.showError
 import by.wolearn.core.utils.showProgress
 import by.wolearn.core.view.entities.Resource
 import by.wolearn.core.view.entities.ResourceObserver
+import by.wolearn.core.view.fragments.BottomNavigationFragmentDirections
 import by.wolearn.learning.model.entities.Category
 import by.wolearn.learning.view.adapters.CategoriesAdapter
 import by.wolearn.learning.viewmodel.CategoriesViewModel
@@ -30,8 +31,8 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
         categories.adapter = adapter
         categories.layoutManager = LinearLayoutManager(activity)
 
-        learnWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
-        repeatWords.setOnClickListener { mainNavController.navigate(R.id.action_bottomNavigationFragment_to_learningFragment) }
+        learnWords.setOnClickListener { goToLearning(false) }
+        repeatWords.setOnClickListener { goToLearning(true) }
 
         model.categories.observe(viewLifecycleOwner, object : ResourceObserver<List<Category>>() {
             override fun onError(error: Resource.Error<List<Category>>) = showError(error)
@@ -41,6 +42,14 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
                 data?.let { adapter.items = it }
             }
         })
+    }
+
+    private fun goToLearning(isRepeating: Boolean) {
+        val direction =
+            BottomNavigationFragmentDirections.actionBottomNavigationFragmentToLearningFragment(
+                isRepeating
+            )
+        mainNavController.navigate(direction)
     }
 
 }

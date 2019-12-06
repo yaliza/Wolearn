@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: "androidx.navigation.safeargs"
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
@@ -34,6 +36,9 @@ android {
                 showStandardStreams = true
             }
         }
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 

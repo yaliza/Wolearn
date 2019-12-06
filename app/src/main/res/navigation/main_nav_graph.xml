@@ -40,7 +40,11 @@
     <fragment
         android:id="@+id/learningFragment"
         android:name="by.wolearn.learning.view.fragments.LearningFragment"
-        android:label="WordFragment" />
+        android:label="WordFragment" >
+        <argument
+            android:name="isRepeating"
+            app:argType="boolean" />
+    </fragment>
 
     <fragment
         android:id="@+id/bottomNavigationFragment"
