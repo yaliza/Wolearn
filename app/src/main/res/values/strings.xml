@@ -34,6 +34,7 @@
     <string name="profile_total">Total</string>
     <string name="profile_today">Today</string>
     <string name="profile_categories">Categories</string>
+    <string name="profile_name">%s %s</string>
 
     <!--LEARNING-->
     <string name="learning_start_new">Start learning new words</string>

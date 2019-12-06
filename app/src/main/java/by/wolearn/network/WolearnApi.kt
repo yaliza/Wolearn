@@ -5,9 +5,12 @@ import by.wolearn.learning.model.entities.Category
 import by.wolearn.learning.model.entities.Word
 import by.wolearn.login.model.entities.NewUser
 import by.wolearn.login.model.entities.UserCredentials
+import by.wolearn.profile.model.HistoryWord
+import by.wolearn.profile.model.Profile
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 
 interface WolearnApi {
@@ -26,4 +29,10 @@ interface WolearnApi {
 
     @GET(WORDS)
     suspend fun getWords(): List<Word>
+
+    @GET(USER)
+    suspend fun getProfile(): Profile
+
+    @GET("$USER/$HISTORY")
+    suspend fun getHistory(@Query(PARAM_OFFSET) offset: Int = 0, @Query(PARAM_NUM) num: Int = 20): List<HistoryWord>
 }
