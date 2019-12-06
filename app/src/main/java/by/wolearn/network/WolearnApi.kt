@@ -3,7 +3,8 @@ package by.wolearn.network
 import by.wolearn.core.model.Token
 import by.wolearn.learning.model.entities.Category
 import by.wolearn.learning.model.entities.Word
-import by.wolearn.login.model.UserCredentials
+import by.wolearn.login.model.entities.NewUser
+import by.wolearn.login.model.entities.UserCredentials
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -20,8 +21,8 @@ interface WolearnApi {
     @POST(LOGIN)
     suspend fun login(@Body user: UserCredentials): Token
 
-//    @POST(REGISTER)
-//    suspend fun register(@Body user: User)
+    @POST(REGISTER)
+    suspend fun register(@Body user: NewUser)
 
     @GET(WORDS)
     suspend fun getWords(): List<Word>

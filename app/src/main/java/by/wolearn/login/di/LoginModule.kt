@@ -1,6 +1,6 @@
 package by.wolearn.login.di
 
-import by.wolearn.login.model.LoginRepository
+import by.wolearn.login.model.repositories.LoginRepository
 import by.wolearn.login.viewmodel.LoginViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module

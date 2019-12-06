@@ -18,6 +18,7 @@ class ProgressDialogFragment : DialogFragment() {
 
         return AlertDialog.Builder(context!!)
             .setView(view)
+            .setCancelable(false)
             .create()
             .apply {
                 requestWindowFeature(Window.FEATURE_NO_TITLE)

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.wolearn.R
 import by.wolearn.core.view.entities.Resource
-import by.wolearn.login.model.LoginRepository
+import by.wolearn.login.model.repositories.LoginRepository
 import kotlinx.coroutines.launch
 
 
@@ -25,6 +25,7 @@ class LoginViewModel(private val repository: LoginRepository) : ViewModel() {
                 return@launch
             }
             val resp = repository.login(login, password)
+            loginResult.postValue(Resource.Loading())
             loginResult.postValue(resp)
         }
     }

@@ -1,8 +1,9 @@
-package by.wolearn.login.model
+package by.wolearn.login.model.repositories
 
 import by.wolearn.core.model.TokenStorage
 import by.wolearn.core.view.entities.Resource
 import by.wolearn.core.view.entities.mapResource
+import by.wolearn.login.model.entities.UserCredentials
 import by.wolearn.network.WolearnApi
 import by.wolearn.network.safeApiCall
 
@@ -13,7 +14,12 @@ class LoginRepository(
 ) {
 
     suspend fun login(login: String, password: String): Resource<Unit> {
-        val response = safeApiCall { api.login(UserCredentials(login, password)) }
+        val response = safeApiCall { api.login(
+            UserCredentials(
+                login,
+                password
+            )
+        ) }
         if (response is Resource.Success && response.data != null) {
             tokenStorage.store(response.data)
         }

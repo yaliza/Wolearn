@@ -11,6 +11,11 @@
     <string name="login_empty_name">Login cannot be empty</string>
     <string name="login_empty_password">Password cannot be empty</string>
 
+    <string name="register_empty_login">Login cannot be empty</string>
+    <string name="register_empty_password">Password cannot be empty</string>
+    <string name="register_empty_name">Name cannot be empty</string>
+    <string name="register_empty_surname">Surname cannot be empty</string>
+
     <!--MAIN MENU-->
     <string name="action_profile">Profile</string>
     <string name="action_learning">Learning</string>

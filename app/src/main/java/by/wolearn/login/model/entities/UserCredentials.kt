@@ -1,4 +1,4 @@
-package by.wolearn.login.model
+package by.wolearn.login.model.entities
 
 
 class UserCredentials(
