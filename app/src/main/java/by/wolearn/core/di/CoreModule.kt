@@ -3,6 +3,7 @@ package by.wolearn.core.di
 import androidx.room.Room
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import by.wolearn.core.model.CategoriesStorage
 import by.wolearn.core.model.TokenStorage
 import by.wolearn.core.model.WolearnDatabase
 import org.koin.dsl.module
@@ -21,9 +22,8 @@ val coreModule = module {
         )
     }
 
-    single {
-        TokenStorage(get())
-    }
+    single { TokenStorage(get()) }
+    single { CategoriesStorage() }
 
 
     single { Room.databaseBuilder(get(), WolearnDatabase::class.java, "wolearn").build() }
