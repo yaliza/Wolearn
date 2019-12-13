@@ -20,13 +20,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/S"
         app:layout_constraintBottom_toBottomOf="@id/categoryImage"
-        app:layout_constraintEnd_toStartOf="@id/includeCategory"
+        app:layout_constraintEnd_toStartOf="@id/selectCategory"
         app:layout_constraintStart_toEndOf="@id/categoryImage"
         app:layout_constraintTop_toTopOf="@id/categoryImage"
         tools:text="category name" />
 
     <CheckBox
-        android:id="@+id/includeCategory"
+        android:id="@+id/selectCategory"
         android:layout_width="26dp"
         android:layout_height="wrap_content"
         android:checked="true"

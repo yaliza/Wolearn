@@ -12,6 +12,9 @@
     <color name="violetMaterialCardBackground">#FCFCFC</color>
     <color name="violetWindowBackground">#FFFFFF</color>
 
+    <color name="memorize_color">#057E02</color>
+    <color name="unmemorize_color">#B00020</color>
+
     <color name="yellowColorPrimary">#FFEB3B</color>
     <color name="yellowColorPrimaryDark">#C8B900</color>
     <color name="yellowColorPrimaryLight">#FFFF72</color>

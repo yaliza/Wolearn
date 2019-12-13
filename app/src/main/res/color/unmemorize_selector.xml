@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Normal -->
+    <item android:color="?colorSecondary" android:state_pressed="false" android:state_selected="false" />
+    <!-- Pressed -->
+    <item android:color="@color/unmemorize_color" android:state_pressed="true" />
+    <!-- Selected -->
+    <item android:color="@color/unmemorize_color" android:state_selected="true" />
+</selector>

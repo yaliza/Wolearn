@@ -1,13 +1,12 @@
-package by.wolearn.core.view
+package by.wolearn.core.view.views
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import androidx.cardview.widget.CardView
 import by.wolearn.R
 import by.wolearn.core.utils.load
+import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.view_action_button.view.*
-
 
 const val DEFAULT_IMAGE = R.drawable.ic_eye
 
@@ -15,7 +14,7 @@ class ActionButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : CardView(context, attrs, defStyleAttr) {
+) : MaterialCardView(context, attrs, defStyleAttr) {
 
     init {
         View.inflate(context, R.layout.view_action_button, this)

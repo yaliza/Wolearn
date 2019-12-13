@@ -8,6 +8,13 @@
     <string name="login_hint_name">Enter name</string>
     <string name="login_hint_surname">Enter surname</string>
     <string name="login_register">Register</string>
+    <string name="login_empty_name">Login cannot be empty</string>
+    <string name="login_empty_password">Password cannot be empty</string>
+
+    <string name="register_empty_login">Login cannot be empty</string>
+    <string name="register_empty_password">Password cannot be empty</string>
+    <string name="register_empty_name">Name cannot be empty</string>
+    <string name="register_empty_surname">Surname cannot be empty</string>
 
     <!--MAIN MENU-->
     <string name="action_profile">Profile</string>
@@ -27,11 +34,18 @@
     <string name="profile_total">Total</string>
     <string name="profile_today">Today</string>
     <string name="profile_categories">Categories</string>
+    <string name="profile_name">%s %s</string>
 
     <!--LEARNING-->
     <string name="learning_start_new">Start learning new words</string>
     <string name="learning_start_repeat">Repeat words</string>
-    <string name="learning_familiar_word">I know this word</string>
-    <string name="learning_unfamiliar_word">I don\'t know this word</string>
+    <string name="learning_familiar_word">Know</string>
+    <string name="learning_unfamiliar_word">Don\'t know</string>
+
+    <string name="error_network">No internet connection</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_http">Error with status %d and message %s </string>
+
+    <string name="progress">Wait, please</string>
 
 </resources>

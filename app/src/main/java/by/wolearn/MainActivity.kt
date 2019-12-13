@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import by.wolearn.core.utils.hide
 import by.wolearn.core.utils.show
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,6 +12,7 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
+    private val mainNavController by lazy { findNavController(R.id.mainNavHostFragment) }
     private val prefs: SharedPreferences by inject()
     private val prefsListener =
         SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
@@ -27,19 +27,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        findNavController(R.id.navHostFragment).addOnDestinationChangedListener { _, destination, _ ->
+        mainNavController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.loginFragment, R.id.registrationFragment, R.id.learningFragment -> {
-                    bottomMenu.hide()
-                    toolbar.hide()
-                }
-                else -> {
-                    bottomMenu.show()
-                    toolbar.show()
-                }
+                R.id.bottomNavigationFragment -> toolbar.show()
+                else -> toolbar.hide()
             }
         }
-        bottomMenu.setupWithNavController(findNavController(R.id.navHostFragment))
     }
 
     override fun onResume() {
