@@ -1,7 +1,6 @@
 package by.wolearn.network
 
 import by.wolearn.core.model.Token
-import by.wolearn.learning.model.entities.Category
 import by.wolearn.learning.model.entities.MemorizeWord
 import by.wolearn.learning.model.entities.Word
 import by.wolearn.login.model.entities.NewUser
@@ -12,12 +11,6 @@ import retrofit2.http.*
 
 
 interface WolearnApi {
-
-    @GET(CATEGORIES)
-    suspend fun getCategories(): List<Category>
-
-    @POST(CATEGORIES)
-    suspend fun setCategories(@Body categories: List<Category>)
 
     @POST(LOGIN)
     suspend fun login(@Body user: UserCredentials): Token

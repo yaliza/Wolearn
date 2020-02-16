@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val settingsModule = module {
 
-    single { SettingsRepository(get(), get(), get()) }
+    single { SettingsRepository(get(), get()) }
     viewModel { SettingsViewModel(get()) }
 
 }

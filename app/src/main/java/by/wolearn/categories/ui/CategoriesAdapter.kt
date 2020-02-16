@@ -1,13 +1,13 @@
-package by.wolearn.learning.view.adapters
+package by.wolearn.categories.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
+import by.wolearn.categories.data.Category
 import by.wolearn.core.utils.didSet
 import by.wolearn.core.utils.load
-import by.wolearn.learning.model.entities.Category
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_category.*
 import kotlinx.android.synthetic.main.item_category.view.*

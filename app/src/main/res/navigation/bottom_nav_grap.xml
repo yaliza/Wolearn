@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="by.wolearn.learning.view.fragments.CategoriesFragment"
+        android:name="by.wolearn.categories.ui.CategoriesFragment"
         tools:layout="@layout/fragment_categories"
         android:label="LearningFragment" />
 

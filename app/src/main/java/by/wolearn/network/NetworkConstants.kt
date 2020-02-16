@@ -1,8 +1,7 @@
 package by.wolearn.network
 
 
-const val BASE_URL = "https://wolearn-api.herokuapp.com/api/v1/"
-const val CATEGORIES = "categories"
+const val BASE_URL = " https://secret-caverns-46687.herokuapp.com/"
 const val LEARN = "learn"
 const val REPEAT = "repeat"
 const val WORD = "word"

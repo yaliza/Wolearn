@@ -1,6 +1,7 @@
 package by.wolearn
 
 import android.app.Application
+import by.wolearn.categories.di.categoriesModule
 import by.wolearn.core.di.coreModule
 import by.wolearn.learning.di.learningModule
 import by.wolearn.settings.di.settingsModule
@@ -26,7 +27,8 @@ class WolearnApp : Application() {
                     loginModule,
                     learningModule,
                     profileModule,
-                    settingsModule
+                    settingsModule,
+                    categoriesModule
                 )
             )
         }
