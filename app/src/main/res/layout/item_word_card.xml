@@ -63,22 +63,14 @@
             tools:text="adj" />
 
         <ImageView
-            android:id="@+id/closeWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_close"
-            android:background="?android:attr/selectableItemBackground"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/pronounceWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_volume"
             android:layout_marginEnd="@dimen/S"
             android:background="?android:attr/selectableItemBackground"
-            app:layout_constraintEnd_toStartOf="@id/closeWord"
+            android:src="@drawable/ic_volume"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <by.wolearn.core.view.views.ActionButton

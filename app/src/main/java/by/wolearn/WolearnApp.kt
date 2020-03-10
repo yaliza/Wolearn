@@ -1,13 +1,13 @@
 package by.wolearn
 
 import android.app.Application
+import by.wolearn.auth.AuthPreferences
 import by.wolearn.categories.di.categoriesModule
 import by.wolearn.core.di.coreModule
 import by.wolearn.learning.di.learningModule
 import by.wolearn.settings.di.settingsModule
 import by.wolearn.login.di.loginModule
-import by.wolearn.login.di.registrationModule
-import by.wolearn.network.di.networkModule
+import by.wolearn.registration.di.registrationModule
 import by.wolearn.profile.di.profileModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -22,7 +22,6 @@ class WolearnApp : Application() {
             modules(
                 listOf(
                     coreModule,
-                    networkModule,
                     registrationModule,
                     loginModule,
                     learningModule,
@@ -32,5 +31,7 @@ class WolearnApp : Application() {
                 )
             )
         }
+        AuthPreferences.init(this)
     }
+
 }

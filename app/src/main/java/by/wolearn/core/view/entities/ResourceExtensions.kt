@@ -2,7 +2,7 @@ package by.wolearn.core.view.entities
 
 
 fun<T> Resource<T>.fold(
-    onSuccess: (T?) -> Unit,
+    onSuccess: (T) -> Unit,
     onError: (Resource.Error<T>) -> Unit
 ) {
     if(this is Resource.Success) {

@@ -25,14 +25,6 @@ class MainActivity : AppCompatActivity() {
         setupTheme()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        mainNavController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.bottomNavigationFragment -> toolbar.show()
-                else -> toolbar.hide()
-            }
-        }
     }
 
     override fun onResume() {

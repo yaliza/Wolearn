@@ -3,24 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottomNavigation"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/learningFragment">
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="by.wolearn.settings.view.SettingsFragment"
-        tools:layout="@layout/fragment_settings"
-        android:label="SettingsFragment" />
+        android:name="by.wolearn.settings.ui.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="by.wolearn.profile.view.ProfileFragment"
-        tools:layout="@layout/fragment_profile"
-        android:label="MainFragment" />
+        android:name="by.wolearn.profile.ui.ProfileFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="by.wolearn.categories.ui.CategoriesFragment"
-        tools:layout="@layout/fragment_categories"
-        android:label="LearningFragment" />
+        android:label="CategoriesFragment"
+        tools:layout="@layout/fragment_categories" />
+
+    <fragment
+        android:id="@+id/learningFragment"
+        android:name="by.wolearn.learning.ui.LearningFragment"
+        android:label="LearningFragment"
+        tools:layout="@layout/fragment_learning" />
 
 </navigation>

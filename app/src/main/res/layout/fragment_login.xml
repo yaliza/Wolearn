@@ -1,66 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/S"
-    android:layout_marginRight="@dimen/S">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLogin"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/login_hint_login"
-        app:layout_constraintBottom_toTopOf="@id/textInputPassword"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed">
+    <include layout="@layout/fragment_login_content" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:nextFocusDown="@id/textInputPassword"
-            android:singleLine="true" />
+    <include
+        layout="@layout/view_progress_transparent"
+        android:visibility="gone" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <include
+        layout="@layout/view_error"
+        android:visibility="gone" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/login_hint_password"
-        app:layout_constraintBottom_toTopOf="@id/login"
-        app:layout_constraintTop_toBottomOf="@id/textInputLogin">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:inputType="textPassword"
-            android:singleLine="true" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        app:layout_constraintBottom_toTopOf="@id/register"
-        app:layout_constraintTop_toBottomOf="@id/textInputPassword" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/register"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_register"
-        android:textColor="?attr/colorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

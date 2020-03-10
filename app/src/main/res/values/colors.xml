@@ -22,4 +22,10 @@
     <color name="yellowColorSecondaryDark">#6A0080</color>
     <color name="yellowTextColorSecondary">#000000</color>
     <color name="yellowTextColorPrimary">#FFFFFF</color>
+
+    <color name="grey">#E6E6E6</color>
+
+    <color name="blue">#2581EF</color>
+    <color name="green">#009124</color>
+    <color name="red">#CF3C02</color>
 </resources>

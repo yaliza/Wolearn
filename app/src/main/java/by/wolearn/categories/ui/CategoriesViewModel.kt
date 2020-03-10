@@ -1,12 +1,12 @@
 package by.wolearn.categories.ui
 
-import android.util.Log
-import androidx.lifecycle.*
-import by.wolearn.core.view.entities.Resource
-import by.wolearn.categories.data.Category
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import by.wolearn.categories.data.CategoriesRepository
+import by.wolearn.categories.backend.entities.Category
+import by.wolearn.core.view.entities.Resource
 import by.wolearn.core.view.entities.fold
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -17,31 +17,39 @@ class CategoriesViewModel(
     val state = MutableLiveData<State>()
 
     init {
+        refresh()
+    }
+
+    fun update(category: Category, isSelected: Boolean) {
+        if (category.isSelected == isSelected) return
         viewModelScope.launch {
+            category.isSelected = isSelected
+            // repository.updateCategory(category)
+        }
+    }
+
+    fun refresh() {
+        viewModelScope.launch {
+            state.postValue(State.Progress)
             repository.getCategories().fold(
-                { categories: List<Category>? ->
-                    categories?.let { state.postValue(State.Success(categories)) }
-                },
-                {
-                    Log.d("LOOOG", "error ${it.exception}")
-                }
+                { state.postValue(State.Success(it)) },
+                { handleException(it) }
             )
         }
     }
 
-    fun update(category: Category, isSelected: Boolean) {
-        viewModelScope.launch {
-            if (category.isSelected != isSelected) {
-                category.isSelected = isSelected
-                repository.updateCategory(category)
-            }
+    private fun handleException(error: Resource.Error<List<Category>>) {
+        when (error) {
+            is Resource.Error.ApiError -> state.postValue(State.Error(error.exception.message))
+            is Resource.Error.UnknownError -> state.postValue(State.UnknownError)
         }
     }
 
     sealed class State {
-        class Success(val categories: List<Category>): State()
+        class Success(val categories: List<Category>) : State()
         object Progress : State()
         object UnknownError : State()
+        class Error(val message: String) : State()
     }
 
 }

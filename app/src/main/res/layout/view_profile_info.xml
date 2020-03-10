@@ -1,176 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/S"
-    app:cardElevation="@dimen/profile_info_elevation"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/L">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/profile_avatar_size"
+        android:layout_height="@dimen/profile_avatar_size"
+        android:layout_marginTop="@dimen/XS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_avatar" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/L">
+        android:layout_marginTop="@dimen/XS"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        tools:text="Ivan Ivanov" />
 
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="@dimen/profile_avatar_size"
-            android:layout_height="@dimen/profile_avatar_size"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <by.wolearn.profile.ui.widgets.NumberView
+        android:id="@+id/totalNumber"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/S"
+        app:layout_constraintEnd_toStartOf="@id/todayNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:ovalColor="@color/blue"
+        app:ovalSize="60dp"
+        app:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/XL"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@id/statToday"
-            app:layout_constraintTop_toBottomOf="@id/avatar"
-            tools:text="Name Surname" />
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/XS"
+        android:gravity="center"
+        android:text="@string/profile_today"
+        app:layout_constraintEnd_toEndOf="@id/totalNumber"
+        app:layout_constraintStart_toStartOf="@id/totalNumber"
+        app:layout_constraintTop_toBottomOf="@id/totalNumber" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/statToday"
-            android:layout_width="@dimen/profile_stat_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/XL"
-            android:layout_marginBottom="@dimen/L"
-            app:cardElevation="@dimen/profile_stat_elevation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/statTotal"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name">
+    <by.wolearn.profile.ui.widgets.NumberView
+        android:id="@+id/todayNumber"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/S"
+        app:layout_constraintEnd_toStartOf="@id/categoriesNumber"
+        app:layout_constraintStart_toEndOf="@id/totalNumber"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:ovalColor="@color/green"
+        app:ovalSize="60dp"
+        app:textSize="25sp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/XS"
+        android:gravity="center"
+        android:lines="2"
+        android:text="@string/profile_total"
+        app:layout_constraintEnd_toEndOf="@id/todayNumber"
+        app:layout_constraintStart_toStartOf="@id/todayNumber"
+        app:layout_constraintTop_toBottomOf="@id/todayNumber" />
 
-                <TextView
-                    style="@style/StatTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile_today"
-                    app:layout_constraintBottom_toTopOf="@id/dividerToday"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-                <View
-                    android:id="@+id/dividerToday"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+    <by.wolearn.profile.ui.widgets.NumberView
+        android:id="@+id/categoriesNumber"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/S"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/todayNumber"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:ovalColor="@color/red"
+        app:ovalSize="60dp"
+        app:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/todayWords"
-                    style="@style/StatText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dividerToday"
-                    tools:text="2" />
+    <TextView
+        android:id="@+id/categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/XS"
+        android:gravity="center"
+        android:lines="2"
+        android:text="@string/profile_categories"
+        app:layout_constraintEnd_toEndOf="@id/categoriesNumber"
+        app:layout_constraintStart_toStartOf="@id/categoriesNumber"
+        app:layout_constraintTop_toBottomOf="@id/categoriesNumber" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/statTotal"
-            android:layout_width="@dimen/profile_stat_width"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:layout_marginTop="@dimen/XL"
-            android:layout_marginBottom="@dimen/L"
-            app:cardElevation="@dimen/profile_stat_elevation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/statCategories"
-            app:layout_constraintStart_toEndOf="@id/statToday"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <TextView
-                    style="@style/StatTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile_total"
-                    app:layout_constraintBottom_toTopOf="@id/dividerTotal"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/dividerTotal"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/totalWords"
-                    style="@style/StatText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dividerTotal"
-                    tools:text="2" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/statCategories"
-            android:layout_width="@dimen/profile_stat_width"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:layout_marginTop="@dimen/XL"
-            android:layout_marginBottom="@dimen/L"
-            app:cardElevation="@dimen/profile_stat_elevation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/statTotal"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <TextView
-                    style="@style/StatTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile_categories"
-                    app:layout_constraintBottom_toTopOf="@id/dividerCategories"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/dividerCategories"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/totalCategories"
-                    style="@style/StatText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dividerCategories"
-                    tools:text="2" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

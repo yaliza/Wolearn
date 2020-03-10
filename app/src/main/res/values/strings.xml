@@ -1,15 +1,16 @@
 <resources>
     <string name="app_name">Wolearn</string>
 
-    <!--LOGIN AND REGISTRATION SCREENS-->
+    <string name="login_title">Welcome</string>
+    <string name="login_description">Fill the login information to enjoy learning words.</string>
     <string name="login">Login</string>
     <string name="login_hint_login">Enter login</string>
     <string name="login_hint_password">Enter password</string>
-    <string name="login_hint_name">Enter name</string>
-    <string name="login_hint_surname">Enter surname</string>
-    <string name="login_register">Register</string>
-    <string name="login_empty_name">Login cannot be empty</string>
-    <string name="login_empty_password">Password cannot be empty</string>
+    <string name="login_signup">Register</string>
+
+    <string name="registration_hint_name">Enter name</string>
+    <string name="registration_hint_surname">Enter surname</string>
+    <string name="registration">Registration</string>
 
     <string name="register_empty_login">Login cannot be empty</string>
     <string name="register_empty_password">Password cannot be empty</string>
@@ -19,9 +20,13 @@
     <!--MAIN MENU-->
     <string name="action_profile">Profile</string>
     <string name="action_learning">Learning</string>
+    <string name="action_categories">Categories</string>
     <string name="action_settings">Settings</string>
 
     <!--SETTINGS-->
+    <string name="settings_title">Settings</string>
+    <string name="settings_others">Others</string>
+    <string name="settings_profile">Profile</string>
     <string name="settings_reset_statistics">Reset statistics</string>
     <string name="settings_delete_account">Delete account</string>
     <string name="settings_logout">Logout</string>
@@ -31,9 +36,9 @@
     <string name="key_appearance">APPEARANCE</string>
 
     <!--PROFILE-->
-    <string name="profile_total">Total</string>
-    <string name="profile_today">Today</string>
-    <string name="profile_categories">Categories</string>
+    <string name="profile_total">Words\ntotal</string>
+    <string name="profile_today">Words\ntoday</string>
+    <string name="profile_categories">Categories\ntotal</string>
     <string name="profile_name">%s %s</string>
 
     <!--LEARNING-->
@@ -42,6 +47,9 @@
     <string name="learning_familiar_word">Know</string>
     <string name="learning_unfamiliar_word">Don\'t know</string>
 
+    <string name="error_oops">Ooops...</string>
+    <string name="error_text">Something went wrong</string>
+    <string name="error_repeat">Repeat</string>
     <string name="error_network">No internet connection</string>
     <string name="error_unknown">Unknown error</string>
     <string name="error_http">Error with status %d and message %s </string>

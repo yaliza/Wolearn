@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
-import by.wolearn.categories.data.Category
+import by.wolearn.categories.backend.entities.Category
 import by.wolearn.core.utils.didSet
-import by.wolearn.core.utils.load
+import by.wolearn.core.utils.loadCircle
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_category.*
 import kotlinx.android.synthetic.main.item_category.view.*
@@ -40,7 +40,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
         fun bind(item: Category) {
             category.text = item.name
             selectCategory.isChecked = item.isSelected
-            categoryImage.load(item.imageURL)
+            categoryImage.loadCircle(item.imageURL)
         }
     }
 }

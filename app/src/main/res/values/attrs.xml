@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="colorSecondaryDark" format="reference"/>
-    <attr name="colorPrimaryLight" format="reference"/>
-    <attr name="materialCardBackground" format="reference"/>
+    <attr name="colorSecondaryDark" format="reference" />
+    <attr name="colorPrimaryLight" format="reference" />
+    <attr name="materialCardBackground" format="reference" />
 
     <declare-styleable name="ActionButton">
         <attr name="action_image" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="NumberView">
+        <attr name="textSize" format="dimension" />
+        <attr name="ovalSize" format="dimension" />
+        <attr name="ovalColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ManageButton">
+        <attr name="icon" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
 </resources>
