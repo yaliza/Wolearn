@@ -2,13 +2,13 @@ package by.wolearn.registration.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import by.wolearn.R
-import by.wolearn.core.utils.Snackbar
+import by.wolearn.core.Snackbar
 import by.wolearn.core.utils.mainNavController
 import kotlinx.android.synthetic.main.fragment_registration_content.*
-import kotlinx.android.synthetic.main.view_error.*
 import kotlinx.android.synthetic.main.view_progress_transparent.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -34,7 +34,7 @@ class RegistrationFragment() : Fragment(R.layout.fragment_registration) {
     }
 
     private fun setupView() {
-        retry.setOnClickListener { register() }
+        view?.findViewById<Button>(R.id.retry)?.setOnClickListener { register() }
         registrationButton.setOnClickListener { register() }
     }
 
@@ -53,17 +53,17 @@ class RegistrationFragment() : Fragment(R.layout.fragment_registration) {
             RegistrationViewModel.State.Progress -> {
                 progress.visibility = View.VISIBLE
                 content.visibility = View.VISIBLE
-                error.visibility = View.GONE
+                view?.findViewById<Button>(R.id.error)?.visibility = View.GONE
             }
             RegistrationViewModel.State.UnknownError -> {
                 progress.visibility = View.GONE
                 content.visibility = View.GONE
-                error.visibility = View.VISIBLE
+                view?.findViewById<Button>(R.id.error)?.visibility = View.VISIBLE
             }
             is RegistrationViewModel.State.Error -> {
                 progress.visibility = View.GONE
                 content.visibility = View.VISIBLE
-                error.visibility = View.GONE
+                view?.findViewById<Button>(R.id.error)?.visibility = View.GONE
                 showError(state)
             }
         }

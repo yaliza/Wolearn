@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_oops">Ooops...</string>
+    <string name="error_text">Something went wrong</string>
+    <string name="error_repeat">Repeat</string>
+</resources>

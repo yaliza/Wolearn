@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import by.wolearn.R
-import by.wolearn.core.utils.load
+import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.view_action_button.view.*
 
@@ -23,9 +23,9 @@ class ActionButton @JvmOverloads constructor(
 
     private fun initAttributes(attrs: AttributeSet?) =
         context.theme.obtainStyledAttributes(attrs, R.styleable.ActionButton, 0, 0).apply {
-            actionButtonImage.load(
-                getResourceId(R.styleable.ActionButton_action_image, DEFAULT_IMAGE)
-            )
+            Glide.with(actionButtonImage)
+                .load( getResourceId(R.styleable.ActionButton_action_image, DEFAULT_IMAGE))
+                .into(actionButtonImage)
             recycle()
         }
 }

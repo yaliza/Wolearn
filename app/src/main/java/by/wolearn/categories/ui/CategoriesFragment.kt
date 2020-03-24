@@ -2,14 +2,14 @@ package by.wolearn.categories.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.wolearn.R
-import by.wolearn.core.utils.Snackbar
-import by.wolearn.core.utils.show
+import by.wolearn.core.Snackbar
+import by.wolearn.core.show
 import kotlinx.android.synthetic.main.fragment_categories.*
-import kotlinx.android.synthetic.main.view_error.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -26,7 +26,7 @@ class CategoriesFragment : Fragment(R.layout.fragment_categories) {
     }
 
     private fun setupView() {
-        retry.setOnClickListener { model.refresh() }
+        view?.findViewById<Button>(R.id.retry)?.setOnClickListener { model.refresh() }
         content.setOnRefreshListener { model.refresh() }
     }
 

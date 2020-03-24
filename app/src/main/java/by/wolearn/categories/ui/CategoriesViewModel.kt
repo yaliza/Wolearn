@@ -3,10 +3,9 @@ package by.wolearn.categories.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.wolearn.categories.data.CategoriesRepository
 import by.wolearn.categories.backend.entities.Category
-import by.wolearn.core.view.entities.Resource
-import by.wolearn.core.view.entities.fold
+import by.wolearn.categories.data.CategoriesRepository
+import by.wolearn.core.fold
 import kotlinx.coroutines.launch
 
 
@@ -24,7 +23,10 @@ class CategoriesViewModel(
         if (category.isSelected == isSelected) return
         viewModelScope.launch {
             category.isSelected = isSelected
-            // repository.updateCategory(category)
+            repository.updateCategory(category, isSelected).fold(
+                { },
+                { handleException(it) }
+            )
         }
     }
 
@@ -38,10 +40,10 @@ class CategoriesViewModel(
         }
     }
 
-    private fun handleException(error: Resource.Error<List<Category>>) {
+    private fun <T> handleException(error: by.wolearn.core.Resource.Error<T>) {
         when (error) {
-            is Resource.Error.ApiError -> state.postValue(State.Error(error.exception.message))
-            is Resource.Error.UnknownError -> state.postValue(State.UnknownError)
+            is by.wolearn.core.Resource.Error.ApiError -> state.postValue(State.Error(error.exception.message))
+            is by.wolearn.core.Resource.Error.UnknownError -> state.postValue(State.UnknownError)
         }
     }
 

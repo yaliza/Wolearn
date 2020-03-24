@@ -1,26 +1,24 @@
 package by.wolearn.login.data
 
 import by.wolearn.auth.AuthPreferences
-import by.wolearn.core.view.entities.Resource
-import by.wolearn.login.backend.LoginApi
-import by.wolearn.core.utils.safeApiCall
+import by.wolearn.auth.LoginApi
 
 
-class LoginRepository(
-    private val loginApi: LoginApi
-) {
+class LoginRepository(private val loginApi: LoginApi) {
 
-    suspend fun login(login: String, password: String): Resource<Unit> {
-        val result = safeApiCall {
+    suspend fun login(login: String, password: String): by.wolearn.core.Resource<Unit> {
+        val result = by.wolearn.core.safeApiCall {
             loginApi.signIn(mapOf("name" to login, "password" to password))
         }
         return when (result) {
-            is Resource.Success -> {
+            is by.wolearn.core.Resource.Success -> {
                 AuthPreferences.safeJwt(result.data.jwtToken)
-                Resource.Success(Unit)
+                by.wolearn.core.Resource.Success(Unit)
             }
-            is Resource.Error.ApiError -> Resource.Error.ApiError(result.exception)
-            is Resource.Error.UnknownError -> Resource.Error.UnknownError()
+            is by.wolearn.core.Resource.Error.ApiError -> by.wolearn.core.Resource.Error.ApiError(
+                result.exception
+            )
+            is by.wolearn.core.Resource.Error.UnknownError -> by.wolearn.core.Resource.Error.UnknownError()
         }
     }
 }

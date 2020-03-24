@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/wordsFragment"
+        android:icon="@drawable/ic_search"
+        android:title="@string/action_words"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/myWordsFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/action_mywords"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="ifRoom" />
+
+</menu>

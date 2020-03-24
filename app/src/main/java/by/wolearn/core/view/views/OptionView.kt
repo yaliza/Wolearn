@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import by.wolearn.R
-import by.wolearn.core.utils.didSetWithValue
+import by.wolearn.core.didSetWithValue
 import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.view_option.view.*
 
@@ -18,7 +18,7 @@ class OptionView @JvmOverloads constructor(
         invalidate()
     }
 
-    var title: String by didSetWithValue("") {
+    var title: String by by.wolearn.core.didSetWithValue("") {
         optionTitle.text = it
     }
 

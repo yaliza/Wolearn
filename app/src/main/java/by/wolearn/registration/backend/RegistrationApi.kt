@@ -1,7 +1,6 @@
 package by.wolearn.registration.backend
 
-import by.wolearn.core.configuration.NetworkConfiguration
-import by.wolearn.login.backend.LoginResponse
+import by.wolearn.core.NetworkConfiguration
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

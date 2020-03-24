@@ -1,7 +1,7 @@
 package by.wolearn.profile.data
 
-import by.wolearn.core.view.entities.Resource
-import by.wolearn.core.utils.safeApiCall
+import by.wolearn.core.Resource
+import by.wolearn.core.safeApiCall
 import by.wolearn.profile.backend.HistoryApi
 import by.wolearn.profile.backend.ProfileApi
 import by.wolearn.profile.backend.entities.HistoryWord
@@ -13,12 +13,12 @@ class ProfileRepository(
     private val historyApi: HistoryApi
 ) {
 
-    suspend fun getProfile(): Resource<Profile> {
-        return safeApiCall { profileApi.getProfile() }
+    suspend fun getProfile(): by.wolearn.core.Resource<Profile> {
+        return by.wolearn.core.safeApiCall { profileApi.getProfile() }
     }
 
-    suspend fun getHistory(): Resource<List<HistoryWord>> {
-        return safeApiCall { historyApi.getHistory() }
+    suspend fun getHistory(): by.wolearn.core.Resource<List<HistoryWord>> {
+        return by.wolearn.core.safeApiCall { historyApi.getHistory() }
     }
 
 }

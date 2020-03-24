@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
-import by.wolearn.core.utils.didSet
+import by.wolearn.core.didSet
 import by.wolearn.profile.backend.entities.HistoryWord
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_history.*
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_history.*
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
-    var items by didSet<List<HistoryWord>>(emptyList()) { notifyDataSetChanged() }
+    var items by by.wolearn.core.didSet<List<HistoryWord>>(emptyList()) { notifyDataSetChanged() }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history, parent, false)

@@ -3,7 +3,7 @@ package by.wolearn.profile.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.wolearn.core.view.entities.Resource
+import by.wolearn.core.Resource
 import by.wolearn.profile.backend.entities.HistoryWord
 import by.wolearn.profile.backend.entities.Profile
 import by.wolearn.profile.data.ProfileRepository
@@ -25,7 +25,7 @@ class ProfileViewModel(
         viewModelScope.launch {
             val profile = repository.getProfile()
             val history = repository.getHistory()
-            if (profile is Resource.Success && history is Resource.Success) {
+            if (profile is by.wolearn.core.Resource.Success && history is by.wolearn.core.Resource.Success) {
                 state.postValue(State.Data(profile.data, history.data))
             }
         }

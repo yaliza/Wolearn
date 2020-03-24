@@ -1,2 +1,7 @@
 include ':app'
 rootProject.name='Wolearn'
+include ':lib_auth'
+include ':lib_core'
+include ':app-teacher'
+include ':feature_login'
+include ':lib-ui'

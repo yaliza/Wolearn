@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.wolearn.R
-import by.wolearn.core.utils.Snackbar
-import by.wolearn.core.utils.show
+import by.wolearn.core.Snackbar
+import by.wolearn.core.show
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -56,7 +56,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             is ProfileViewModel.State.Error -> {
                 content.isRefreshing = false
                 animator.show(R.id.content)
-                Snackbar.make(view, state.message, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, state.message, Snackbar.LENGTH_LONG)?.show()
             }
             ProfileViewModel.State.Progress -> animator.show(R.id.progress)
             ProfileViewModel.State.UnknownError -> animator.show(R.id.error)

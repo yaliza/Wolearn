@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/M"
+    android:layout_marginTop="@dimen/XS"
+    android:layout_marginEnd="@dimen/M"
+    android:layout_marginBottom="@dimen/XS"
+    android:background="@drawable/bg_corner"
+    android:padding="@dimen/M">
+
+    <TextView
+        android:id="@+id/wordLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Word: " />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/XS"
+        android:background="@color/yellow"
+        android:paddingStart="@dimen/XS"
+        android:paddingEnd="@dimen/XS"
+        app:layout_constraintStart_toEndOf="@id/wordLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="banana" />
+
+
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/S"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wordLabel"
+        tools:text="Category: " />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/XS"
+        android:background="@color/yellowFaded"
+        android:paddingStart="@dimen/XS"
+        android:paddingEnd="@dimen/XS"
+        android:text="fruits"
+        app:layout_constraintStart_toEndOf="@id/categoryLabel"
+        app:layout_constraintTop_toTopOf="@id/categoryLabel" />
+
+    <TextView
+        android:id="@+id/pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:paddingStart="@dimen/XS"
+        android:paddingEnd="@dimen/XS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="noun" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 package by.wolearn.learning.backend
 
-import by.wolearn.core.configuration.NetworkConfiguration
+import by.wolearn.core.NetworkConfiguration
 import by.wolearn.learning.backend.entities.Word
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

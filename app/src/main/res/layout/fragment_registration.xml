@@ -10,7 +10,7 @@
         android:visibility="gone" />
 
     <include
-        layout="@layout/view_error"
+        layout="@layout/ui_view_error"
         android:visibility="gone" />
 
 </FrameLayout>

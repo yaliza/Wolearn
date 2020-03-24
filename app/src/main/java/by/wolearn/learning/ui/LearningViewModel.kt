@@ -3,8 +3,7 @@ package by.wolearn.learning.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.wolearn.core.view.entities.Resource
-import by.wolearn.core.view.entities.fold
+import by.wolearn.core.fold
 import by.wolearn.learning.backend.entities.Word
 import by.wolearn.learning.data.LearningRepository
 import by.wolearn.learning.ui.entities.WordItem
@@ -33,6 +32,16 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
         }
     }
 
+    fun swipeAndMemorizeWord(wordItem: WordItem) {
+        swipeCard.postValue(Direction.Right)
+        saveWord(wordItem, Direction.Right)
+    }
+
+    fun swipeAndForgetWord(wordItem: WordItem) {
+        swipeCard.postValue(Direction.Left)
+        saveWord(wordItem, Direction.Left)
+    }
+
     fun saveWord(wordItem: WordItem, direction: Direction?) {
         viewModelScope.launch {
             val isMemorize = direction == Direction.Right
@@ -52,10 +61,10 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
         state.postValue(State.Data(list.toList()))
     }
 
-    private fun <T> handleException(error: Resource.Error<T>) {
+    private fun <T> handleException(error: by.wolearn.core.Resource.Error<T>) {
         when (error) {
-            is Resource.Error.ApiError -> state.postValue(State.Error(error.exception.message))
-            is Resource.Error.UnknownError -> state.postValue(State.UnknownError)
+            is by.wolearn.core.Resource.Error.ApiError -> state.postValue(State.Error(error.exception.message))
+            is by.wolearn.core.Resource.Error.UnknownError -> state.postValue(State.UnknownError)
         }
     }
 

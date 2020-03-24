@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">app-teacher</string>
+
+    <string name="login_login_hint">Login</string>
+    <string name="login_password_hint">Password</string>
+
+
+    <string name="action_mywords">Home</string>
+    <string name="action_words">Search</string>
+    <string name="action_settings">Settings</string>
+</resources>

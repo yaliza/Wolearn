@@ -1,22 +1,23 @@
 package by.wolearn.categories.backend
 
 import by.wolearn.categories.backend.entities.Category
-import by.wolearn.core.configuration.NetworkConfiguration
+import by.wolearn.core.NetworkConfiguration
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
+
 
 interface CategoriesApi {
 
     @GET("categories")
     suspend fun getCategories(): List<Category>
 
-    @POST("categories")
-    suspend fun setCategories(@Body categories: List<Category>)
+    @POST("category")
+    suspend fun setCategory(@Query("categoryId") categoryId: Int, @Query("isSelected") isSelected: Boolean)
 
     companion object {
 

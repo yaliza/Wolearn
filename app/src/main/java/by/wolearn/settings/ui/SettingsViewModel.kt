@@ -3,7 +3,7 @@ package by.wolearn.settings.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.wolearn.core.view.entities.fold
+import by.wolearn.core.fold
 import by.wolearn.settings.data.SettingsRepository
 import kotlinx.coroutines.launch
 

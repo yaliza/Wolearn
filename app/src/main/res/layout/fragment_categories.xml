@@ -28,6 +28,6 @@
 
     <include layout="@layout/view_progress" />
 
-    <include layout="@layout/view_error" />
+    <include layout="@layout/ui_view_error" />
 
 </ViewAnimator>

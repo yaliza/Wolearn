@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: "androidx.navigation.safeargs"
+
+apply from: '../configuration/dependencies.gradle'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "by.wolearn"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation project(":lib_auth")
+    implementation project(':lib_core')
+    implementation project(':lib-ui')
+
+    implementation coreDependencies.appCompat
+    implementation coreDependencies.coreKtx
+
+    implementation uiDependencies.constraintLayout
+    implementation uiDependencies.material
+    implementation uiDependencies.swipeLayout
+
+    implementation glide.lib
+    kapt glide.kapt
+
+    implementation navigation.navigation
+    implementation navigation.navigationUi
+
+    implementation coroutines.core
+    implementation coroutines.android
+
+    implementation koin.koin
+
+    implementation network.retrofit
+    implementation network.gson
+    implementation network.logging
+
+    testImplementation 'junit:junit:4.12'
+}

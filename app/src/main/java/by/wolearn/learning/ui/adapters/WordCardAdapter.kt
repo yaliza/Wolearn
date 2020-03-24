@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
-import by.wolearn.core.utils.didSet
+import by.wolearn.core.didSet
 import by.wolearn.learning.ui.entities.WordItem
 import by.wolearn.learning.ui.entities.WordItemViewState
 import com.yuyakaido.android.cardstackview.Direction
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_word_card.view.*
 class WordCardAdapter(private val wordCardListener: WordCardListener?) :
     RecyclerView.Adapter<WordCardViewHolder>() {
 
-    var items: List<WordItem> by didSet(emptyList()) { notifyDataSetChanged() }
+    var items: List<WordItem> by by.wolearn.core.didSet(emptyList()) { notifyDataSetChanged() }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordCardViewHolder {
         val view =
