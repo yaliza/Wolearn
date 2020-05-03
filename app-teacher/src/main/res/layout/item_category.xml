@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/categoryChooser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="@dimen/M"
+    android:paddingTop="@dimen/S"
+    android:paddingEnd="@dimen/M">
+
+    <ImageView
+        android:id="@+id/categoryImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/S"
+        app:layout_constraintBottom_toBottomOf="@id/categoryImage"
+        app:layout_constraintEnd_toStartOf="@id/radioButton"
+        app:layout_constraintStart_toEndOf="@id/categoryImage"
+        app:layout_constraintTop_toTopOf="@id/categoryImage"
+        tools:text="category name" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="26dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@id/categoryImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/categoryImage" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/S"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/categoryImage"
+        app:layout_constraintTop_toBottomOf="@id/categoryImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

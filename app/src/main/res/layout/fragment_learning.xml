@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/animator"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yuyakaido.android.cardstackview.CardStackView
-        android:id="@+id/cardStack"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="@dimen/L"
-        tools:listitem="@layout/item_word_card" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/smile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_no_words"
+            app:layout_constraintBottom_toTopOf="@id/text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/L"
+            android:text="@string/learning_no_words"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/smile" />
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/cardStack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/L"
+            tools:listitem="@layout/item_word_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include layout="@layout/ui_view_error" />
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.wolearn.core.fold
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import by.wolearn.learning.data.LearningRepository
 import by.wolearn.learning.ui.entities.WordItem
 import com.yuyakaido.android.cardstackview.Direction
@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 
 class LearningViewModel(private val repository: LearningRepository) : ViewModel() {
 
+    private var learnedSize = 0
     private val list = mutableListOf<WordItem>()
 
     val state = MutableLiveData<State>()
@@ -25,7 +26,7 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
 
     fun loadWords() {
         viewModelScope.launch {
-            repository.getWords().fold(
+            repository.getWords(list.size).fold(
                 { handleData(it) },
                 { handleException(it) }
             )
@@ -34,12 +35,10 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
 
     fun swipeAndMemorizeWord(wordItem: WordItem) {
         swipeCard.postValue(Direction.Right)
-        saveWord(wordItem, Direction.Right)
     }
 
     fun swipeAndForgetWord(wordItem: WordItem) {
         swipeCard.postValue(Direction.Left)
-        saveWord(wordItem, Direction.Left)
     }
 
     fun saveWord(wordItem: WordItem, direction: Direction?) {
@@ -47,8 +46,8 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
             val isMemorize = direction == Direction.Right
             repository.saveWord(wordItem.word.id, isMemorize).fold(
                 {
-                    list.removeAt(0)
-                    if (list.size == MIN_WORDS_NUMBER) loadWords()
+                    learnedSize++
+                    if (list.size - learnedSize == MIN_WORDS_NUMBER) loadWords()
                 },
                 { handleException(it) }
             )
@@ -75,7 +74,7 @@ class LearningViewModel(private val repository: LearningRepository) : ViewModel(
         object UnknownError : State()
     }
 
-    companion object{
+    companion object {
         private const val MIN_WORDS_NUMBER = 2
     }
 }

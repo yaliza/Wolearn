@@ -1,7 +1,7 @@
 package by.wolearn.learning.backend
 
 import by.wolearn.core.NetworkConfiguration
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -17,7 +17,10 @@ interface WordsApi {
     suspend fun saveWord(@Query("wordId") wordId: Long, @Query("isMemorized") isMemorized: Boolean)
 
     @GET("words")
-    suspend fun getWords(): List<Word>
+    suspend fun getWords(
+        @Query("offset") offset: Int, @Query("size") size: Int,
+        @Query("isRepeating") isRepeat: Boolean, @Query("isNew") isNew: Boolean
+    ): List<Word>
 
     companion object {
         fun get(interceptors: List<Interceptor>): WordsApi {

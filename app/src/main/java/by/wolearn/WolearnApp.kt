@@ -5,6 +5,7 @@ import by.wolearn.auth.AuthPreferences
 import by.wolearn.categories.di.categoriesModule
 import by.wolearn.core.di.coreModule
 import by.wolearn.learning.di.learningModule
+import by.wolearn.learningmode.di.learningModeModule
 import by.wolearn.settings.di.settingsModule
 import by.wolearn.login.di.loginModule
 import by.wolearn.registration.di.registrationModule
@@ -27,7 +28,8 @@ class WolearnApp : Application() {
                     learningModule,
                     profileModule,
                     settingsModule,
-                    categoriesModule
+                    categoriesModule,
+                    learningModeModule
                 )
             )
         }

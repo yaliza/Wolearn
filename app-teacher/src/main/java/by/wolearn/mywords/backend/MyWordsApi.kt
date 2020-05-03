@@ -1,7 +1,7 @@
 package by.wolearn.mywords.backend
 
 import by.wolearn.core.NetworkConfiguration
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

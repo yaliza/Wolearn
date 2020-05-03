@@ -1,6 +1,5 @@
 package by.wolearn.profile.data
 
-import by.wolearn.core.Resource
 import by.wolearn.core.safeApiCall
 import by.wolearn.profile.backend.HistoryApi
 import by.wolearn.profile.backend.ProfileApi
@@ -14,11 +13,11 @@ class ProfileRepository(
 ) {
 
     suspend fun getProfile(): by.wolearn.core.Resource<Profile> {
-        return by.wolearn.core.safeApiCall { profileApi.getProfile() }
+        return safeApiCall { profileApi.getProfile() }
     }
 
     suspend fun getHistory(): by.wolearn.core.Resource<List<HistoryWord>> {
-        return by.wolearn.core.safeApiCall { historyApi.getHistory() }
+        return safeApiCall { historyApi.getHistory() }
     }
 
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/L"
+        android:layout_marginTop="@dimen/L"
+        android:layout_marginEnd="@dimen/L"
+        android:layout_marginBottom="@dimen/S"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/view_progress_transparent" />
+
+</ViewAnimator>

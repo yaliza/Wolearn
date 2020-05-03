@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wordCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/XS">
+        android:layout_height="match_parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/unmemorizeWord"
@@ -37,6 +37,7 @@
             android:id="@+id/word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/L"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/S"
+            android:layout_marginTop="@dimen/L"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/word"
             app:layout_constraintTop_toTopOf="parent"
@@ -57,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/S"
+            android:layout_marginTop="@dimen/L"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/transcription"
             app:layout_constraintTop_toTopOf="parent"

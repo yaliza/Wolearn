@@ -1,136 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animator"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/S">
+        android:layout_marginStart="@dimen/L"
+        android:layout_marginEnd="@dimen/L"
+        android:layout_marginBottom="@dimen/S"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/settingsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:text="@string/settings_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/view_progress" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:layout_marginTop="@dimen/S"
-            android:layout_marginEnd="@dimen/S"
-            app:layout_constraintTop_toBottomOf="@id/settingsTitle">
+    <include layout="@layout/view_progress_transparent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <by.wolearn.settings.ui.widgets.ManageButton
-                    android:id="@+id/editAccount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="@dimen/S"
-                    app:icon="@drawable/settings_ic_edit"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:text="@string/settings_profile" />
-
-                <by.wolearn.settings.ui.widgets.ManageButton
-                    android:id="@+id/appearance"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="@dimen/S"
-                    app:icon="@drawable/settings_ic_theme"
-                    app:layout_constraintTop_toBottomOf="@id/editAccount"
-                    app:text="@string/settings_appearance" />
-
-                <by.wolearn.settings.ui.widgets.ManageButton
-                    android:id="@+id/resetStat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="@dimen/S"
-                    app:icon="@drawable/settings_ic_remove"
-                    app:layout_constraintTop_toBottomOf="@id/appearance"
-                    app:text="@string/settings_reset_statistics" />
-
-                <by.wolearn.settings.ui.widgets.ManageButton
-                    android:id="@+id/deleteAccount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="@dimen/S"
-                    app:icon="@drawable/settings_ic_delete"
-                    app:layout_constraintTop_toBottomOf="@id/resetStat"
-                    app:text="@string/settings_delete_account" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:id="@+id/othersTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:layout_marginTop="@dimen/S"
-            android:text="@string/settings_others"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/settings" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/others"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/S"
-            android:layout_marginTop="@dimen/S"
-            android:layout_marginEnd="@dimen/S"
-            app:layout_constraintTop_toBottomOf="@id/othersTitle">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <by.wolearn.settings.ui.widgets.ManageButton
-                    android:id="@+id/logout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="@dimen/S"
-                    app:icon="@drawable/settings_ic_exit"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:text="@string/settings_logout" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <include
-        layout="@layout/view_progress_transparent"
-        android:visibility="gone" />
-
-    <include
-        layout="@layout/ui_view_error"
-        android:visibility="gone" />
-
-</FrameLayout>
+</ViewAnimator>

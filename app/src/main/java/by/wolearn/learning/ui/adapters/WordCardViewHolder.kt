@@ -19,15 +19,15 @@ class WordCardViewHolder(override val containerView: View) : LayoutContainer,
 
     fun bind(item: WordItem) {
         word.text = item.word.name
-        pos.text = item.word.pos
+        pos.text = item.word.pos.name
         wordDefinition.text = item.word.quiz.options[item.word.quiz.indexOfRight]
-        transcription.text = item.word.transcription
+        transcription.text = "[${item.word.transcription}]"
 
         examples.removeAllViews()
         item.word.examples.forEach { example: String ->
             val view =
                 LayoutInflater.from(containerView.context)
-                    .inflate(R.layout.item_example, null, false)
+                    .inflate(R.layout.item_example, null, true)
             view.text.text = example
             examples.addView(view)
         }

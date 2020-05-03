@@ -9,13 +9,19 @@ class SettingsRepository(
     private val api: SettingsApi
 ) {
 
-    suspend fun logout(): by.wolearn.core.Resource<Unit> {
+    suspend fun logout(): Resource<Unit> {
         AuthPreferences.clear()
-        return by.wolearn.core.Resource.Success(Unit)
+        return Resource.Success(Unit)
     }
 
-    suspend fun deleteProfile(): by.wolearn.core.Resource<Unit> {
-        val result = by.wolearn.core.safeApiCall {
+    suspend fun resetStatistics(): Resource<Unit> {
+        return safeApiCall {
+            api.resetStatistics()
+        }
+    }
+
+    suspend fun deleteProfile(): Resource<Unit> {
+        val result = safeApiCall {
             api.deleteProfile()
         }
         if (result is by.wolearn.core.Resource.Success) AuthPreferences.clear()

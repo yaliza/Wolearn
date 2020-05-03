@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
 import by.wolearn.core.didSet
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_word.*
 
@@ -32,7 +32,7 @@ class MyWordsAdapter : RecyclerView.Adapter<MyWordsAdapter.CategoryViewHolder>()
 
         fun bind(item: Word) {
             word.text = item.name
-            pos.text = item.pos
+            pos.text = item.pos.name
         }
     }
 }

@@ -24,13 +24,19 @@
     <string name="action_settings">Settings</string>
 
     <!--SETTINGS-->
-    <string name="settings_title">Settings</string>
-    <string name="settings_others">Others</string>
-    <string name="settings_profile">Profile</string>
+    <string name="settings_title_profile">Profile</string>
+    <string name="settings_title_others">Others</string>
+    <string name="settings_title_learning">Learning</string>
+    <string name="settings_learning_mode">Setup mode</string>
     <string name="settings_reset_statistics">Reset statistics</string>
+    <string name="settings_edit_profile">Edit profile info</string>
     <string name="settings_delete_account">Delete account</string>
     <string name="settings_logout">Logout</string>
-    <string name="settings_appearance">Appearance</string>
+    <string name="setting_reset_statistics_success">Statistics reset successfully</string>
+
+    <string name="learning_mode_new">Only new words</string>
+    <string name="learning_mode_repeat">Repeat words</string>
+    <string name="learning_mode_mixed">Mixed words</string>
 
     <!--SETTINGS KEYS-->
     <string name="key_appearance">APPEARANCE</string>
@@ -46,13 +52,17 @@
     <string name="learning_start_repeat">Repeat words</string>
     <string name="learning_familiar_word">Know</string>
     <string name="learning_unfamiliar_word">Don\'t know</string>
+    <string name="learning_no_words">No words…</string>
 
-    <string name="error_oops">Ooops...</string>
+    <string name="error_oops">Ooops…</string>
     <string name="error_text">Something went wrong</string>
     <string name="error_repeat">Repeat</string>
     <string name="error_network">No internet connection</string>
     <string name="error_unknown">Unknown error</string>
     <string name="error_http">Error with status %d and message %s </string>
+
+    <string name="history_familiar">familiar</string>
+    <string name="history_unfamiliar">unfamiliar</string>
 
     <string name="progress">Wait, please</string>
 

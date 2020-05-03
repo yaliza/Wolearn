@@ -11,9 +11,9 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> =
             is HttpException -> {
                 val apiException =
                     parseApiException(thr.response()?.errorBody()?.string())
-                if (apiException == null) Resource.Error.UnknownError() else Resource.Error.ApiError(apiException)
+                if (apiException == null) Resource.Error.UnknownError(thr) else Resource.Error.ApiError(apiException)
             }
-            else -> Resource.Error.UnknownError()
+            else -> Resource.Error.UnknownError(thr)
         }
     }
 

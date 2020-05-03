@@ -1,15 +1,15 @@
 package by.wolearn.core.di
 
-import android.speech.tts.TextToSpeech
 import by.wolearn.auth.AuthInterceptor
 import by.wolearn.core.backend.OnAuthFailedListenerImpl
+import by.wolearn.core.data.AppPreferences
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
-import java.util.*
 
 
 val coreModule = module {
 
+    single { AppPreferences(get()) }
     single { OnAuthFailedListenerImpl(get()) }
 
     single {
@@ -19,7 +19,4 @@ val coreModule = module {
         )
     }
 
-    single {
-        TextToSpeech(get()) {}.also { it.language = Locale.UK }
-    }
 }

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.wolearn.R
 import by.wolearn.core.didSet
+import by.wolearn.core.didSetValue
 import by.wolearn.learning.ui.entities.WordItem
 import by.wolearn.learning.ui.entities.WordItemViewState
 import com.yuyakaido.android.cardstackview.Direction
@@ -13,7 +14,9 @@ import kotlinx.android.synthetic.main.item_word_card.view.*
 class WordCardAdapter(private val wordCardListener: WordCardListener?) :
     RecyclerView.Adapter<WordCardViewHolder>() {
 
-    var items: List<WordItem> by by.wolearn.core.didSet(emptyList()) { notifyDataSetChanged() }
+    var items: List<WordItem> by didSetValue(emptyList()) { old: List<WordItem>, new: List<WordItem> ->
+        notifyItemRangeInserted(old.size, new.size)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordCardViewHolder {
         val view =
@@ -30,7 +33,6 @@ class WordCardAdapter(private val wordCardListener: WordCardListener?) :
                 items[holder.adapterPosition].viewState = WordItemViewState.OPTIONS
                 holder.showOptions()
             }
-            pronounceWord.setOnClickListener { wordCardListener?.onPronounce(items[holder.adapterPosition]) }
         }
         return holder
     }
@@ -53,6 +55,5 @@ class WordCardAdapter(private val wordCardListener: WordCardListener?) :
     interface WordCardListener {
         fun onMemorizeWord(wordItem: WordItem)
         fun onUnmemorizeWord(wordItem: WordItem)
-        fun onPronounce(wordItem: WordItem)
     }
 }

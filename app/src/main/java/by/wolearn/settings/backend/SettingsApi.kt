@@ -10,7 +10,10 @@ import retrofit2.http.POST
 interface SettingsApi {
 
     @POST("/v1/delete_profile")
-    suspend fun deleteProfile(): Unit
+    suspend fun deleteProfile()
+
+    @POST("/v1/reset_statistics")
+    suspend fun resetStatistics()
 
     companion object {
         fun get(interceptors: List<Interceptor>): SettingsApi {

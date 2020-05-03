@@ -2,6 +2,7 @@ package by.wolearn.login.data
 
 import by.wolearn.auth.AuthPreferences
 import by.wolearn.auth.LoginApi
+import java.lang.Exception
 
 
 class LoginRepository(private val loginApi: LoginApi) {
@@ -18,7 +19,7 @@ class LoginRepository(private val loginApi: LoginApi) {
             is by.wolearn.core.Resource.Error.ApiError -> by.wolearn.core.Resource.Error.ApiError(
                 result.exception
             )
-            is by.wolearn.core.Resource.Error.UnknownError -> by.wolearn.core.Resource.Error.UnknownError()
+            is by.wolearn.core.Resource.Error.UnknownError -> by.wolearn.core.Resource.Error.UnknownError(Exception())
         }
     }
 }

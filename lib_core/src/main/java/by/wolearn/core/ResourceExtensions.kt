@@ -3,11 +3,11 @@ package by.wolearn.core
 
 fun<T> Resource<T>.fold(
     onSuccess: (T) -> Unit,
-    onError: (by.wolearn.core.Resource.Error<T>) -> Unit
+    onError: (Resource.Error<T>) -> Unit
 ) {
-    if(this is by.wolearn.core.Resource.Success) {
+    if(this is Resource.Success) {
         onSuccess.invoke(this.data)
-    } else if(this is by.wolearn.core.Resource.Error) {
+    } else if(this is Resource.Error) {
         onError.invoke(this)
     }
 }

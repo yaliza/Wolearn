@@ -49,12 +49,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             LoginViewModel.State.Progress -> {
                 progress.visibility = View.VISIBLE
                 content.visibility = View.VISIBLE
-                view?.findViewById<Button>(R.id.error)?.visibility = View.GONE
+                view?.findViewById<View>(R.id.error)?.visibility = View.GONE
             }
             LoginViewModel.State.UnknownError -> {
                 progress.visibility = View.GONE
                 content.visibility = View.GONE
-                view?.findViewById<Button>(R.id.error)?.visibility = View.VISIBLE
+                view?.findViewById<View>(R.id.error)?.visibility = View.VISIBLE
             }
             is LoginViewModel.State.LoginError -> {
                 showContent()

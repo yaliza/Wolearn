@@ -37,6 +37,14 @@
     <fragment
         android:id="@+id/addWordFragment"
         android:name="by.wolearn.addword.ui.AddWordFragment"
-        android:label="AddWordFragment" />
+        android:label="AddWordFragment" >
+        <action
+            android:id="@+id/action_addWordFragment_to_categoryChooserFragment"
+            app:destination="@id/categoryChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryChooserFragment"
+        android:name="by.wolearn.chooser.ui.CategoryChooserFragment"
+        android:label="CategoryChooserFragment" />
 
 </navigation>

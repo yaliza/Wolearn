@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 
 val learningModule = module {
 
-    single { LearningRepository(get()) }
+    single { LearningRepository(get(), get()) }
     single { WordsApi.get(get()) }
     viewModel { LearningViewModel(get()) }
 

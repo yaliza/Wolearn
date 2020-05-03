@@ -1,10 +1,11 @@
 package by.wolearn.mywords.ui
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.wolearn.core.fold
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import by.wolearn.mywords.data.MyWordsRepository
 import kotlinx.coroutines.launch
 
@@ -21,7 +22,9 @@ class MyWordsViewModel(private val repository: MyWordsRepository) : ViewModel() 
         viewModelScope.launch {
             repository.getWords().fold(
                 { state.postValue(State.Data(it)) },
-                { state.postValue(State.Error) }
+                {
+                    Log.d("LOOOG", "error", it.error)
+                    state.postValue(State.Error) }
             )
         }
     }

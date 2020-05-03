@@ -52,6 +52,8 @@ dependencies {
     implementation uiDependencies.constraintLayout
     implementation uiDependencies.material
     implementation uiDependencies.swipeLayout
+    implementation uiDependencies.epoxy
+    kapt uiDependencies.epoxyAnnotationProcessor
 
     implementation glide.lib
     kapt glide.kapt

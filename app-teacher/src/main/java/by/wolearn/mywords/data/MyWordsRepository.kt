@@ -2,7 +2,7 @@ package by.wolearn.mywords.data
 
 import by.wolearn.core.Resource
 import by.wolearn.core.safeApiCall
-import by.wolearn.learning.backend.entities.Word
+import by.wolearn.core.Word
 import by.wolearn.mywords.backend.MyWordsApi
 
 

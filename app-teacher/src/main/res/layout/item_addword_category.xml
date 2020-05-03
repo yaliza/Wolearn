@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/categoryChooser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/S"
+    android:layout_marginTop="@dimen/S"
+    android:layout_marginEnd="@dimen/S"
+    android:layout_marginBottom="@dimen/S"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="@dimen/S">
+
+    <ImageView
+        android:id="@+id/categoryImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/S"
+        android:text="@string/addword_category"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/categoryImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/S"
+        app:layout_constraintBottom_toBottomOf="@id/categoryImage"
+        app:layout_constraintEnd_toStartOf="@id/choose"
+        app:layout_constraintStart_toEndOf="@id/categoryImage"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        tools:text="category name" />
+
+    <ImageView
+        android:id="@+id/choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_choose"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/S"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="Error text here" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

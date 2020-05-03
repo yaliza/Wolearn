@@ -1,14 +1,25 @@
 package by.wolearn.learning.data
 
+import by.wolearn.core.data.AppPreferences
 import by.wolearn.learning.backend.WordsApi
 import by.wolearn.core.safeApiCall
+import by.wolearn.learningmode.data.LearningMode
 
 
-class LearningRepository(private val api: WordsApi) {
+class LearningRepository(
+    private val api: WordsApi,
+    private val appPreferences: AppPreferences
+) {
 
-    suspend fun getWords() = by.wolearn.core.safeApiCall { api.getWords() }
+    suspend fun getWords(offset: Int = 0, size: Int = 6) = safeApiCall {
+        when (appPreferences.getLearningMode()) {
+            LearningMode.REPEAT -> api.getWords(offset, size, isRepeat = true, isNew = false)
+            LearningMode.NEW -> api.getWords(offset, size, isRepeat = false, isNew = true)
+            LearningMode.MIXED -> api.getWords(offset, size, isRepeat = true, isNew = true)
+        }
+    }
 
     suspend fun saveWord(wordId: Long, isMemorized: Boolean) =
-        by.wolearn.core.safeApiCall { api.saveWord(wordId, isMemorized) }
+        safeApiCall { api.saveWord(wordId, isMemorized) }
 
 }

@@ -60,6 +60,9 @@ dependencies {
     implementation uiDependencies.swipeLayout
     implementation uiDependencies.cardStack
 
+    implementation uiDependencies.epoxy
+    kapt uiDependencies.epoxyAnnotationProcessor
+
     implementation glide.lib
     kapt glide.kapt
 

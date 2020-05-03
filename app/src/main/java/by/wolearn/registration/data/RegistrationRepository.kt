@@ -25,7 +25,7 @@ class RegistrationRepository(
                 by.wolearn.core.Resource.Success(Unit)
             }
             is by.wolearn.core.Resource.Error.ApiError -> by.wolearn.core.Resource.Error.ApiError(result.exception)
-            is by.wolearn.core.Resource.Error.UnknownError -> by.wolearn.core.Resource.Error.UnknownError()
+            is by.wolearn.core.Resource.Error.UnknownError -> by.wolearn.core.Resource.Error.UnknownError(Exception())
         }
     }
 

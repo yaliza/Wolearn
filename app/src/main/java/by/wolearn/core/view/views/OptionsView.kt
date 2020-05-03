@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import by.wolearn.R
-import by.wolearn.learning.backend.entities.Quiz
+import by.wolearn.core.Quiz
 import kotlinx.android.synthetic.main.view_options.view.*
 
 class OptionsView @JvmOverloads constructor(

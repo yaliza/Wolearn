@@ -18,7 +18,7 @@ class LoginRepository(val loginApi: LoginApi) {
                 Resource.Success(Unit)
             }
             is Resource.Error.ApiError -> Resource.Error.ApiError(result.exception)
-            is Resource.Error.UnknownError -> Resource.Error.UnknownError()
+            is Resource.Error.UnknownError -> Resource.Error.UnknownError(result.error)
         }
     }
 

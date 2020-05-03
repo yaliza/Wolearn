@@ -1,7 +1,6 @@
 package by.wolearn.learning.ui
 
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
@@ -16,13 +15,10 @@ import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import kotlinx.android.synthetic.main.fragment_learning.*
-import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class LearningFragment : Fragment(R.layout.fragment_learning), WordCardAdapter.WordCardListener,
     CardStackListener {
-
-    val textToSpeech by inject<TextToSpeech>()
     private lateinit var manager: CardStackLayoutManager
     private lateinit var adapter: WordCardAdapter
 
@@ -42,18 +38,14 @@ class LearningFragment : Fragment(R.layout.fragment_learning), WordCardAdapter.W
     override fun onCardAppeared(view: View?, position: Int) {}
     override fun onCardRewound() {}
     override fun onCardSwiped(direction: Direction?) {}
-    override fun onCardDisappeared(view: View?, position: Int) =
+    override fun onCardDisappeared(view: View?, position: Int) {
         model.saveWord(adapter.items[position], manager.cardStackState.direction)
-
-    override fun onPronounce(wordItem: WordItem) {
-        textToSpeech.speak(wordItem.word.name, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
     private fun setupViewModel() {
         model.state.observe(viewLifecycleOwner, Observer { showState(it) })
         model.swipeCard.observe(viewLifecycleOwner, Observer { swipeCard(it) })
     }
-
 
     private fun setupView() {
         view?.findViewById<Button>(R.id.retry)?.setOnClickListener { model.loadWords() }
@@ -82,7 +74,7 @@ class LearningFragment : Fragment(R.layout.fragment_learning), WordCardAdapter.W
         when (state) {
             is LearningViewModel.State.Data -> {
                 adapter.items = state.items
-                animator.show(R.id.cardStack)
+                animator.show(R.id.content)
             }
             is LearningViewModel.State.Error -> {
                 Snackbar.make(view, state.message, Snackbar.LENGTH_LONG)?.show()
